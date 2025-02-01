@@ -1,0 +1,144 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.nav{
+    border: 2px solid black;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-color: azure;
+    padding: 30px;
+    margin: 10px;
+    margin-bottom: 20px;
+}
+a {
+    text-decoration: none;
+    color: black;
+   
+}
+.search-bar {
+    width: 400px; /* Increase width */
+    height: 40px; /* Adjust height if needed */
+    border: 2px solid #333; /* Darker border */
+    border-radius: 5px; /* Optional rounded corners */
+    padding: 0 10px; /* Add padding inside the search bar */
+    font-size: 16px; /* Adjust text size */
+}
+ .search-bar:focus {
+    border-color: #000;
+    outline: none; 
+} 
+.searchcontainer{
+    display: flex; /* Align search bar and button side by side */
+    align-items: center; /* Center items vertically */
+    gap: 2px;
+}
+.searchbutton{
+    width: 150px;
+    border: solid 2px black;
+    height: 34px;
+    background-color: rgb(82, 138, 202);
+    color: white;
+    transition:transform 0.3s;
+   border-radius: 2px;
+}
+.searchbutton:hover{
+    transform: scale(1.04);
+}
+.navlogo{
+    height: 150px;
+}
+.navlinks{
+    display: flex;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    gap: 20px;
+    padding: 20px;
+    margin: 5px;
+}
+.heading{
+    font-size: 29px;
+    text-align: center;
+}
+.marksimg{
+    display: block;
+    margin: auto;
+    width: 80%;
+}
+.instruction {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    line-height: 1.6;
+}
+h2 {
+    color: #333;
+}
+ul {
+    list-style-type: square;
+}
+.section {
+    margin-bottom: 20px;
+}
+.highlight {
+    font-weight: bold;
+    color: #d9534f;
+}
+.btn{
+    text-align: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 80px;
+  margin-left: 80%;
+  font-size: 25px;
+}
+
+
+
+.footer{
+    
+    display: flex;
+    box-sizing: border-box;
+    /* height: 250px; */
+    /* width: 100%; */
+    justify-content: space-between;
+    background-color:rgb(43, 37, 37);
+    color: white;
+    padding: 30px;
+    margin: 10px;
+    margin-top: 40px;
+}
+.box1{
+    height: 100%;
+    width: 33%;
+}
+.ftimg1{
+    padding: 0;
+    margin: 0;
+    width: 50%;
+}
+.box2{
+    height: 100%;
+    width: 33%;
+}
+.ftimg{
+    height: 20%;
+    width: 10%;
+    transition: transform 0.3s, filter 0.3s;
+}
+.box3{
+    height: 100%;
+    width: 33%;
+}
+.ftimg:hover {
+    transform: scale(1.1);
+    filter: brightness(0.8);
+}
+.fta{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}

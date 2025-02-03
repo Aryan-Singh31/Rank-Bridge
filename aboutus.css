@@ -76,9 +76,6 @@ a {
   /* background-image: url(imgs4.jpg); */
   font-weight: bold;
 }
-.webdetails:hover{
-    /* background-color:  #7a4856a3; */
-}
 
 .ourfocus{
     font-size: 25px;
@@ -89,9 +86,6 @@ a {
     background-image: url(images/img10.jpg);
     margin-left: 60px;
    
-}
-.ourfocus:hover{
-  
 }
 .foc{
     width: 60%;
@@ -104,9 +98,6 @@ a {
     background-color:  #494343a3;
     transition: background-color 1.5s ease, color 0.3s ease;
     color: rgb(18, 17, 17);
-}
-.foc:hover{
-   
 }
 
 .upcoming{

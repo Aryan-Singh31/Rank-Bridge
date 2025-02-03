@@ -1,11 +1,11 @@
 *{
-    margin: 0%;
-    padding: 0%;
-  box-sizing: border-box;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 body{
-    background-color: white;
+    background-image: url(images/upscbg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .nav{
     border: 2px solid black;
@@ -64,88 +64,61 @@ a {
     padding: 20px;
     margin: 5px;
 }
-.webdetails{
-    font-size: 30px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 10px;
-  padding: 8px;
-  cursor: pointer;
-  color: rgb(18, 17, 17);
-  font-style: oblique;
-  transition: background-color 1.5s ease, color 0.3s ease;
-  /* background-image: url(imgs4.jpg); */
-  font-weight: bold;
-}
-.webdetails:hover{
-    /* background-color:  #7a4856a3; */
-}
-
-.ourfocus{
-    font-size: 25px;
-   
-    list-style: disc;
-    margin: 15px;
-    padding: 15px;
-    background-image: url(images/img10.jpg);
-    margin-left: 60px;
-   
-}
-.ourfocus:hover{
-  
-}
-.foc{
-    width: 60%;
-    font-size: 25px;
-    list-style: disc;
-    margin: 18px;
-    padding: 15px;
-    margin-bottom: 20px;
-    margin-left: 60px;
-    background-color:  #494343a3;
-    transition: background-color 1.5s ease, color 0.3s ease;
-    color: rgb(18, 17, 17);
-}
-.foc:hover{
-   
-}
-
-.upcoming{
-    text-align: center;
-    font-size: 30px;
-    list-style: disc;
-    margin: 18px;
-    padding: 8px;
-    transition: background-color 1.5s ease, color 0.3s ease;
-}
-.upcoming:hover{
-    background-color:  #81639ca3;
-    border: 2px solid blue;
-    border-radius: 15px;
-}
-.developers{
+.mock-list {
+    margin: 70px;
     display: flex;
-    flex-direction: row;
+    overflow-y: auto;
+    max-height: 50vh;
+    gap: 10px;
+    flex-wrap: wrap;
+    border: 2px solid rgb(24, 24, 22);
+    background-color: rgba(255, 255, 255, 0.332);
 }
-.aryan, .shweta,.Krishna1,.Krishna2{
-    border: 2px solid black;
-    border-radius: 10px;
-    margin: 12px;
-    padding: 12px;
-    height: 400px;
-    font-size: 20px;
+
+.mock{
+    width: 600px;
+    height: 140px;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5px;
+    background-color: #2a2c41;
+    position: relative;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 40px;
+   
 }
-.aryan:hover, .shweta:hover,.Krishna1:hover,.Krishna2:hover{
-    background-color: black;
-    color: white;;
+.heading{
+    font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgb(155, 154, 162);
+    opacity: 0.89;
+    color: rgb(0, 0, 0);
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
+    position: relative;
+
 }
-.profile{
-    height: 90px;
-    border-radius: 100%;
+.NIMCET{
+    display: inline-block;
+    font-size: 50px;
+    font-weight: bold;
+    color: #333;
+    animation: marquee 8s linear infinite;
+
 }
-.teamcredit{
-font-size: 20px;
-text-align: center;
+@keyframes marquee {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(+100%);
+    }
 }
+
+
 .footer{
     
     display: flex;

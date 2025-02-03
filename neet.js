@@ -1,13 +1,13 @@
 // Example PYQ items
 const pyqItems = [
-    { subject: "NEET PYQ ", year: 2024 , link: "2024.pdf"},
-    { subject: "NEET PYQ ", year: 2023, link: "2023.pdf" },
-    { subject: "NEET PYQ", year: 2022, link: "2022.pdf" },
-    { subject: "NEET PYQ ", year: 2021, link: "2022.pdf" },
-    { subject: "NEET PYQ ", year: 2020, link: "2020.pdf" },
-    { subject: "NEET PYQ ", year: 2019, link: "2019.pdf" },
-    { subject: "NEET PYQ ", year: 2018, link: "2018.pdf" },
-    { subject: "NEET PYQ ", year: 2017, link: "2017.pdf" },
+    { subject: "NEET PYQ ", year: 2024 , link: "PDF/2024neet.pdf"},
+    { subject: "NEET PYQ ", year: 2023, link: "PDF/2023neet.pdf" },
+    { subject: "NEET PYQ", year: 2022, link: "PDF/2022neet.pdf" },
+    { subject: "NEET PYQ ", year: 2021, link: "PDF/2022neet.pdf" },
+    { subject: "NEET PYQ ", year: 2020, link: "PDF/2020neet.pdf" },
+    { subject: "NEET PYQ ", year: 2019, link: "PDF/2019neet.pdf" },
+    { subject: "NEET PYQ ", year: 2018, link: "PDF/2018neet.pdf" },
+    { subject: "NEET PYQ ", year: 2017, link: "PDF/2017neet.pdf" },
   ];
   
   // Function to display PYQ items

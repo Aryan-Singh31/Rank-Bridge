@@ -60,29 +60,118 @@ a {
     padding: 20px;
     margin: 5px;
 }
-.testbox{
-    display: grid;
-    grid-template-columns: 400px 400px 400px;
-    grid-template-rows: 300px 300px;
-    gap: 50px;
-    /* justify-content: space-around; */
-    background-image: url(images/bgmi.png);
-    background-repeat: no-repeat;
+.hero {
+    /* background: url('images/herobg.jpg') center/cover no-repeat;
+    background-size: contain;
+    background-position: left; */
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
 }
-.card{
-    width: 400px;
-    height: 300px;
-    transition: transform 0.3s;
-    border-radius: 50px;
-    margin-left: 50px;
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
 }
-.card:hover{
-    transform: scale(1.03);
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
-.img1{
-    width: 400px;
-    height: 300px;
-    border-radius: 50px;
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* About Section */
+.about {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+.about p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+}
+/* Mentors Section */
+.mentors {
+    text-align: center;
+    padding: 50px 20px;
+    background: white;
+}
+
+.mentor-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.mentor-card {
+    border: 2px solid black;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+}
+.mentor-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.mentor-card h3 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+.mentor-card p{
+    font-weight: bold;
+}
+#john:hover{
+ background-color: rgb(10, 80, 112);
+ color: white;
+}
+
+/* Application Form */
+.apply {
+    text-align: center;
+    padding: 50px 20px;
+    background: rgb(62, 182, 218);
+    color: white;
+}
+
+.apply form {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.apply input, .apply textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.apply button {
+    background: white;
+    color: rgb(62, 182, 218);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 .footer{
     display: flex;

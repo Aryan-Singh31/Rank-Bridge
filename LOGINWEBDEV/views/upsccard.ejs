@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/upsccard.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="nav">
+                <img src="/images/finall.png" alt="Logo" class="navlogo">
+                <div class="searchcontainer">
+                    <input type="search" class="search-bar" placeholder="Search...">
+                    <button class="searchbutton">Search</button>
+                </div>
+                <div class="navlinks">
+                    <a href="/" class="navi">HOME</a>
+                    <a href="#" class="navi">COURSE</a>
+                    <a href="/aboutus" class="navi">ABOUT US</a>
+                    <% if (user) { %>
+                        <a href="#" class="navi">Hello, <%= user.name %></a>
+                        <a href="/logout" class="navi">LOGOUT</a>
+                    <% } else { %>
+                        <a href="/login" class="navi">LOGIN/SIGNUP</a>
+                    <% } %>
+                </div>
+            </div>
+        </div>  
+    </header>
+        <div class="centre">
+            <div class="card dropright">
+                <img src="images/gs.jpeg" alt="General Studies" class="mat">
+                <div class="dropright-menu">
+                   <a href="https://www.youtube.com/watch?v=eHEv5aF5td8&pp=ygUjSGlzdG9yeSBvZiBJbmRpYSB1cHNjIG9uZSBzaG90IGdhdGU%3D">History Of India</a>
+                   <a href="https://www.youtube.com/watch?v=jUKCSfptvdA&pp=ygUqSW5kaWFuIFBvbGl0eSBhbmQgZ292ZXJuYW5jZSBvbmUgc2hvdCB1cHNj">Indian Polity And Governance</a>
+                   <a href="https://www.youtube.com/watch?v=a__t1YpTx_o&pp=ygUtZWNvbm9taWMgYW5kIHNvY2lhbCBkZXZlbG9wbWVudCBvbmUgc2hvdCB1cHNj">Economic And Social Development</a>
+                </div>
+            </div>
+            <div class="card dropleft">
+                <img src="images/geo.jpeg" alt="Geography" class="rea">
+                <div class="dropleft-menu">
+                    <a href="https://www.youtube.com/watch?v=NOzJw8WBl_g&pp=ygUZY2xpbWF0b2xvZ3kgb25lIHNob3QgdXBzYw%3D%3D">Climatology</a>
+                    <a href="https://www.youtube.com/watch?v=BKPuaSTOHYw&pp=ygUbZ2VvbW9ycGhvbG9neSBvbmUgc2hvdCB1cHNj">Geomorphology</a>
+                    <a href="https://www.youtube.com/watch?v=leq_5jqcPZ0&pp=ygUab2NlYW5vZ3JhcGh5IG9uZSBzaG90IHVwc2M%3D">Oceanography</a>
+                    <a href="https://www.youtube.com/watch?v=UyqZ097lrZM&pp=ygUXZ2VvZ3JhcGh5IG9uZSBzaG90IHVwc2M%3D">Geography of India</a>
+                </div>
+            </div>
+            <div class="card dropright">
+                <img src="images/eng.webp" alt="English" class="engli">
+                <div class="dropright-menu">
+                    <a href="https://www.youtube.com/watch?v=-X9G-f2MLTM&pp=ygUQdGVuc2UgZm9yIG5pbWNldA%3D%3D">Tenses</a>
+                    <a href="https://www.youtube.com/watch?v=1rHi6HGYjQc&pp=ygUfQWN0aXZlIHBhc3NpdmUgdm9pY2UgZm9yIG5pbWNldA%3D%3D">Active and Passive Voice</a>
+                    <a href="https://www.youtube.com/watch?v=X14Gh2ogHSU&pp=ygUeZGlyZWN0IGFuZCBpbmRpcmVjdCBmb3IgbmltY2V0">Direct & Indirect Speech</a>
+                    <a href="https://www.youtube.com/watch?v=DGRH_b0gOb8&pp=ygUeU3lub255bSBhbmQgYW50b255bSBmb3IgbmltY2V0">Synonym & Antonym</a>
+                    <a href="https://www.youtube.com/watch?v=YZ6Zz7SWr04&pp=ygUYQ29tcHJlaGVuc2lvbiBmb3IgbmltY2V0">Comprehension</a>
+                    <a href="https://www.youtube.com/watch?v=hH6GrbUD8QQ&pp=ygUmZXJyb3IgY29ycmVjdGlvbiBpbiBlbmdsaXNoIGZvciBuaW1jZXQ%3D">Error Correction</a>
+                    <a href="https://www.youtube.com/watch?v=4PAXNOQDaE4&list=PLv9P5G8zaeaMY4zrBYq7Z7F6G3Wm4OnWI">Vocabulary</a>
+                </div>
+            </div>
+            <div class="card dropleft">
+                <img src="images/chemistry.jpg" alt="Chemistry" class="rea">
+                <div class="dropleft-menu">
+                    <a href="https://www.youtube.com/watch?v=UyYlH8n8Uyg&pp=ygUiYXRvbWljIHN0cnVjdHVyZSBvbmUgc2hvdCBmb3IgdXBzYw%3D%3D">Atomic Structure</a>
+                    <a href="https://www.youtube.com/watch?v=habKqH8np_M&pp=ygUiY2hlbWljYWwgYm9uZGluZyBvbmUgc2hvdCBmb3IgdXBzYw%3D%3D">Chemical Bonding</a>
+                    <a href="https://www.youtube.com/watch?v=7hTtc2CJE-s&pp=ygUdc29saWQgc3RhdGUgb25lIHNob3QgZm9yIHVwc2M%3D">Solid State</a>
+                    <a href="https://www.youtube.com/watch?v=ySivLGauF50&list=PLdZcCa6mtW20BcZblYnupkOyThsdvu1Ls">Gaseous State</a>
+                    <a href="https://www.youtube.com/watch?v=ySivLGauF50&list=PLdZcCa6mtW20BcZblYnupkOyThsdvu1Ls">Thermodynamics</a>
+                    <a href="https://www.youtube.com/watch?v=URg_lCCBnDU&pp=ygUjb3JnYW5pYyBjaGVtaXN0cnkgb25lIHNob3QgZm9yIHVwc2M%3D">Organic Chemistry</a>
+                </div>
+            </div>
+            <div class="card dropright">
+                <img src="images/math.jpg" alt="Mathematics" class="mat">
+                <div class="dropright-menu">
+                   <a href="https://www.youtube.com/watch?v=Enr8VhehduE&pp=ygUgbGluZWFyIEFsZ2VicmEgb25lIHNob3QgZm9yIHVwc2M%3D">Linear Algebra</a>
+                   <a href="https://www.youtube.com/watch?v=WX6O9TiFYsA&list=PLU6SqdYcYsfIJRl8mo2Rv1MpdvmVD0YyI">Calculus</a>
+                   <a href="https://www.youtube.com/watch?v=eIWyfpXQn2Q&pp=ygUnZGlmZmVyZW50aWFsIGVxdWF0aW9uIG9uZSBzaG90IGZvciB1cHNj">Differential Equation</a>
+                   <a href="https://www.youtube.com/watch?v=Zg5Rr-WG3cA&pp=ygUgUmVhbCBBbmFubHlzaXMgb25lIHNob3QgZm9yIHVwc2M%3D">Real Analysis</a>
+                   <a href="https://www.youtube.com/watch?v=LxJ3pXhoVZ8&list=PLdM-WZokR4tZxSx-ErEZvevqQb5duz9b8">Complex Analysis</a>
+                   <a href="https://www.youtube.com/watch?v=jfR-FpE0a8Q&list=PL8bZZHwl4U153HncGMhT4EDhu_PjQD_MS">Group Theory</a>
+                </div>
+            </div>
+            <div class="card dropleft">
+                <img src="images/hindi.jpeg" alt="Hindi" class="rea">
+                <div class="dropleft-menu">
+                    <a href="https://www.youtube.com/watch?v=UmRan1moE7Y&pp=ygUqSGlzdG9yeSBvZiBoaW5kaSBzYWhpdHlhIG9uZSBzaG90IGZvciB1cHNj">History of Hindi Sahitya</a>
+                    <a href="https://www.youtube.com/watch?v=UmRan1moE7Y&pp=ygUqSGlzdG9yeSBvZiBoaW5kaSBzYWhpdHlhIG9uZSBzaG90IGZvciB1cHNj">hindi lipi</a>
+                    <a href="https://www.youtube.com/watch?v=wnr27b3gUjI&pp=ygUgaGluZGkgbXVoYXZyZSAgb25lIHNob3QgZm9yIHVwc2M%3D">idioms and phrases</a>
+                    <a href="https://www.youtube.com/shorts/RYcMqi7BrXM">Tips for essay writing</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="box1">
+                <img src="images/finall.png" alt="" class="ftimg1">
+                <p>Plot No.34,35<br>Knowledge Park I,Greater Noida <br>Uttar Pradesh-201310</p>
+            </div>
+            <div class="box2">
+                <h3>STAY IN TOUCH</h3>
+                <br><br>
+                <img src="images/instagrame.png" alt="" class="ftimg">
+                <img src="images/facebook.png" alt=""  class="ftimg">
+                <img src="images/youtube.png" alt=""  class="ftimg">
+                <img src="images/twitter.png" alt=""  class="ftimg">
+                <br> <br>
+                <a href="" class="fta" title="Your Valuable Feedback is appreciated">Please Share Your Valuable Feedback Here</a>
+            </div>
+            <div class="box3">
+                <p>Contact Us|
+                    Privacy Policy|
+                    Terms & Conditions|
+                    Gifting Policy|
+                    Online payment & refund policy|
+                    Tele-consult|
+                    Contact
+                    <br>
+                    © 2022 Rank Bridge. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

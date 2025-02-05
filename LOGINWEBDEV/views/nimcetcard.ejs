@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/nimcetcard.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="nav">
+                <img src="/images/finall.png" alt="Logo" class="navlogo">
+                <div class="searchcontainer">
+                    <input type="search" class="search-bar" placeholder="Search...">
+                    <button class="searchbutton">Search</button>
+                </div>
+                <div class="navlinks">
+                    <a href="/" class="navi">HOME</a>
+                    <a href="#" class="navi">COURSE</a>
+                    <a href="/aboutus" class="navi">ABOUT US</a>
+                    <% if (user) { %>
+                        <a href="#" class="navi">Hello, <%= user.name %></a>
+                        <a href="/logout" class="navi">LOGOUT</a>
+                    <% } else { %>
+                        <a href="/login" class="navi">LOGIN/SIGNUP</a>
+                    <% } %>
+                </div>
+            </div>
+        </div>  
+    </header>
+        <div class="centre">
+            <div class="card dropright">
+                <img src="images/math.jpg" alt="Mathematics" class="mat">
+                <div class="dropright-menu">
+                    <a href="https://www.youtube.com/watch?v=zWfdM4bK1ss&pp=ygUbYWxnZWJyYSBvbmUgc2hvdCBmb3IgbmltY2V0">Algebra</a>
+                    <a href="https://www.youtube.com/watch?v=8qKNiafafkc&pp=ygUYY2FsY3VsdXMgb25lIHNob3QgbmltY2V0">Calculus</a>
+                    <a href="https://www.youtube.com/watch?v=jFPsFvB3NGY&pp=ygUbcHJvYmFiaWxpdHkgb25lIHNob3QgbmltY2V0">Probability</a>
+                    <a href="https://www.youtube.com/watch?v=effWeFEizQw&pp=ygUcdHJpZ29ub21ldHJ5IG9uZSBzaG90IG5pbWNldA%3D%3D">Trigonometry</a>
+                    <a href="https://www.youtube.com/watch?v=Ql8wf15KD0Y&pp=ygUaU2V0IFRoZW9yeSBvbmUgc2hvdCBuaW1jZXQ%3D">Set Theory</a>
+                    <a href="https://www.youtube.com/watch?v=l-wIvS6mDl4&pp=ygUccmVsYXRpb24gYW5kIGZ1bmN0aW9uIG5pbWNldA%3D%3D">Relation & Function</a>
+                    <a href="https://www.youtube.com/watch?v=hWX351vgRRc&pp=ygUZUXVhZHJhdGljIG5pbWNldCBvbmUgc2hvdA%3D%3D">Quadratic </a>
+                    <a href="https://www.youtube.com/watch?v=PYkBS-R95rQ&pp=ygUbSW50ZWdyYXRpb24gbmltY2V0IG9uZSBzaG90">Integration</a>
+                    <a href="https://www.youtube.com/watch?v=i1Dpns59p24&pp=ygUaZGlmZmVyZW50aWF0aW9uIGZvciBuaW1jZXQ%3D">Differentiation</a>
+                    <a href="https://www.youtube.com/watch?v=QHcbiokBrME&pp=ygUSU3RhdGljcyBmb3IgbmltY2V0">Statics</a>
+                    <a href="https://www.youtube.com/watch?v=-DvIPwSlXV4&pp=ygUeQ29vcmRpbmF0ZSBnZW9tZXRyeSBmb3IgbmltY2V0">Coordinate Geometry</a>
+                </div>
+            </div>
+            <div class="card dropleft">
+                <img src="images/reas.png" alt="Logical Reasoning" class="rea">
+                <div class="dropleft-menu">
+                    <a href="https://www.youtube.com/watch?v=oGgEs-yfbLw&pp=ygUkdmVyYmFsIHJlYXNvbmluZyBvbmUgc2hvdCBmb3IgbmltY2V0">Verbal Reasoning</a>
+                    <a href="https://www.youtube.com/watch?v=oGgEs-yfbLw&pp=ygUkdmVyYmFsIHJlYXNvbmluZyBvbmUgc2hvdCBmb3IgbmltY2V0">Non-Verbal Reasoning</a>
+                    <a href="https://www.youtube.com/watch?v=oGgEs-yfbLw&pp=ygUkdmVyYmFsIHJlYXNvbmluZyBvbmUgc2hvdCBmb3IgbmltY2V0">Critical Thinking</a>
+                </div>
+            </div>
+            <div class="card dropright">
+                <img src="images/eng.webp" alt="English" class="engli">
+                <div class="dropright-menu">
+                    <a href="https://www.youtube.com/watch?v=-X9G-f2MLTM&pp=ygUQdGVuc2UgZm9yIG5pbWNldA%3D%3D">Tenses</a>
+                    <a href="https://www.youtube.com/watch?v=1rHi6HGYjQc&pp=ygUfQWN0aXZlIHBhc3NpdmUgdm9pY2UgZm9yIG5pbWNldA%3D%3D">Active and Passive Voice</a>
+                    <a href="https://www.youtube.com/watch?v=X14Gh2ogHSU&pp=ygUeZGlyZWN0IGFuZCBpbmRpcmVjdCBmb3IgbmltY2V0">Direct & Indirect Speech</a>
+                    <a href="https://www.youtube.com/watch?v=DGRH_b0gOb8&pp=ygUeU3lub255bSBhbmQgYW50b255bSBmb3IgbmltY2V0">Synonym & Antonym</a>
+                    <a href="https://www.youtube.com/watch?v=YZ6Zz7SWr04&pp=ygUYQ29tcHJlaGVuc2lvbiBmb3IgbmltY2V0">Comprehension</a>
+                    <a href="https://www.youtube.com/watch?v=hH6GrbUD8QQ&pp=ygUmZXJyb3IgY29ycmVjdGlvbiBpbiBlbmdsaXNoIGZvciBuaW1jZXQ%3D">Error Correction</a>
+                    <a href="https://www.youtube.com/watch?v=4PAXNOQDaE4&list=PLv9P5G8zaeaMY4zrBYq7Z7F6G3Wm4OnWI">Vocabulary</a>
+                </div>
+            </div>
+            <div class="card dropleft">
+                <img src="images/comp.jpg" alt="Computer" class="cmp">
+                <div class="dropleft-menu">
+                    <a href="https://www.youtube.com/watch?v=xw_OuOhjauw&pp=ygUZb3BlcmF0aW5nIHN5c3RlbSBvbmUgc2hvdA%3D%3D">Operating System</a>
+                    <a href="https://www.youtube.com/watch?v=7DTrHBNbUBY&pp=ygUYQm9vbGVhbiBhbGdlYnJhIG9uZSBzaG90">Boolean Algebra</a>
+                    <a href="https://www.youtube.com/watch?v=fL7kgMMiAxI&pp=ygUUbG9naWMgZ2F0ZXMgb25lIHNob3Q%3D">Logic Gate</a>
+                    <a href="https://www.youtube.com/watch?v=36LjWW-BSyU&pp=ygUNa21hcCBvbmUgc2hvdA%3D%3D">K-Map</a>
+                    <a href="https://www.youtube.com/watch?v=MxjJqq3B6JU&pp=ygUabnVtYmVyIGNvbnZlcnNpb24gb25lIHNob3Q%3D">Number Conversion</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="box1">
+                <img src="images/finall.png" alt="" class="ftimg1">
+                <p>Plot No.34,35<br>Knowledge Park I,Greater Noida <br>Uttar Pradesh-201310</p>
+            </div>
+            <div class="box2">
+                <h3>STAY IN TOUCH</h3>
+                <br><br>
+                <img src="images/instagrame.png" alt="" class="ftimg">
+                <img src="images/facebook.png" alt=""  class="ftimg">
+                <img src="images/youtube.png" alt=""  class="ftimg">
+                <img src="images/twitter.png" alt=""  class="ftimg">
+                <br> <br>
+                <a href="" class="fta" title="Your Valuable Feedback is appreciated">Please Share Your Valuable Feedback Here</a>
+            </div>
+            <div class="box3">
+                <p>Contact Us|
+                    Privacy Policy|
+                    Terms & Conditions|
+                    Gifting Policy|
+                    Online payment & refund policy|
+                    Tele-consult|
+                    Contact
+                    <br>
+                    © 2022 Rank Bridge. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,206 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+/* header css  */
+*{
+  padding: 0;
+  margin: 0;
+}
+.container{
+border: 1px solid red;
+}
+.nav{
+  border: 2px solid black;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background-color: azure;
+  padding: 30px;
+  margin: 10px;
+}
+a {
+  text-decoration: none;
+  color: black;
+ 
+}
+.search-bar {
+  width: 400px; /* Increase width */
+  height: 40px; /* Adjust height if needed */
+  border: 2px solid #333; /* Darker border */
+  border-radius: 5px; /* Optional rounded corners */
+  padding: 0 10px; /* Add padding inside the search bar */
+  font-size: 16px; /* Adjust text size */
+}
+.search-bar:focus {
+  border-color: #000;
+  outline: none; 
+} 
+.searchcontainer{
+  display: flex; /* Align search bar and button side by side */
+  align-items: center; /* Center items vertically */
+  gap: 2px;
+}
+.searchbutton{
+  width: 150px;
+  border: solid 2px black;
+  height: 34px;
+  background-color: rgb(82, 138, 202);
+  color: white;
+  transition:transform 0.3s;
+ border-radius: 2px;
+}
+.searchbutton:hover{
+  transform: scale(1.04);
+}
+.navlogo{
+  height: 150px;
+}
+.navlinks{
+  display: flex;
+  font-weight: bolder;
+  font-size: 1.1rem;
+  gap: 20px;
+  padding: 20px;
+  margin: 5px;
+}
+
+/* header css end */
+body{
+  background-color: rgb(21, 15, 12);
+  }
+
+
+/* am adding here */
+.container2 {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 36px;
+  text-align: center;
+  color: #f3efef;
+  margin-bottom: 20px;
+}
+
+
+.resources {
+  background-color: #193f64;  /* Light grey background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 0 4px rgba(255, 0, 0, 0.5); /* Thicker and bolder initial shadow */
+  position: relative;
+  animation: border-animation 4s infinite linear; /* Apply animation */
+  border: 4px solid transparent; /* Thicker border */
+}
+
+@keyframes border-animation {
+  0% {
+    border-color: transparent;
+    box-shadow: 0 0 0 6px rgba(255, 0, 0, 0.9); /* Thicker red */
+  }
+  25% {
+    box-shadow: 0 0 0 6px rgba(0, 255, 0, 0.9); /* Thicker green */
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(0, 0, 255, 0.9); /* Thicker blue */
+  }
+  75% {
+    box-shadow: 0 0 0 6px rgba(255, 255, 0, 0.9); /* Thicker yellow */
+  }
+  100% {
+    box-shadow: 0 0 0 6px rgba(255, 0, 255, 0.9); /* Thicker purple */
+  }
+}
+
+
+
+
+
+h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+#pyq-list {
+  list-style: none;
+  padding: 0;
+}
+
+#pyq-list li {
+  background-color: #fafafa;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+#pyq-list li:hover {
+  background-color: #e6f7ff;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: #007BFF;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* adding  end */
+
+
+
+
+
+/* footer css start */
+.footer{
+    display: flex;
+    box-sizing: border-box;
+    /* height: 250px; */
+    /* width: 100%; */
+    justify-content: space-between;
+    background-color:rgb(43, 37, 37);
+    color: white;
+    padding: 30px;
+    margin: 10px;
+}
+.box1{
+    height: 100%;
+    width: 33%;
+}
+.ftimg1{
+    padding: 0;
+    margin: 0;
+    width: 50%;
+}
+.box2{
+    height: 100%;
+    width: 33%;
+}
+.ftimg{
+    height: 20%;
+    width: 10%;
+    transition: transform 0.3s, filter 0.3s;
+}
+.box3{
+    height: 100%;
+    width: 33%;
+}
+.ftimg:hover {
+    transform: scale(1.1);
+    filter: brightness(0.8);
+}
+.fta{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+/* footer css end */

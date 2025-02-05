@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIMCET-MOCK-1</title>
+    <link rel="stylesheet" href="/nimcetmock1.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="nav">
+                <img src="/images/finall.png" alt="Logo" class="navlogo">
+                <div class="searchcontainer">
+                    <input type="search" class="search-bar" placeholder="Search...">
+                    <button class="searchbutton">Search</button>
+                </div>
+                <div class="navlinks">
+                    <a href="/" class="navi">HOME</a>
+                    <a href="#" class="navi">COURSE</a>
+                    <a href="/aboutus" class="navi">ABOUT US</a>
+                    <% if (user) { %>
+                        <a href="#" class="navi">Hello, <%= user.name %></a>
+                        <a href="/logout" class="navi">LOGOUT</a>
+                    <% } else { %>
+                        <a href="/login" class="navi">LOGIN/SIGNUP</a>
+                    <% } %>
+                </div>
+            </div>
+        </div>  
+    </header>
+     <main>
+        <div class="container">
+            <div class="quearea">
+                <div id="quiz">
+                    <div class="question" id="question">Loading...</div>
+                    <div class="options" id="options"></div>
+                    <button class="btn" id="nextBtn" >Next</button>
+                    <button class="btn" id="nextBtn1" >Submit</button>
+                </div>
+                <div id="result" style="display: none;"></div>
+            </div>
+
+        </div>
+     </main>
+    <footer>
+        <div class="footer">
+            <div class="box1">
+                <img src="images/finall.png" alt="" class="ftimg1">
+                <p>Plot No.34,35<br>Knowledge Park I,Greater Noida <br>Uttar Pradesh-201310</p>
+            </div>
+            <div class="box2">
+                <h3>STAY IN TOUCH</h3>
+                <br><br>
+                <img src="images/instagrame.png" alt="" class="ftimg">
+                <img src="images/facebook.png" alt=""  class="ftimg">
+                <img src="images/youtube.png" alt=""  class="ftimg">
+                <img src="images/twitter.png" alt=""  class="ftimg">
+                <br> <br>
+                <a href="" class="fta" title="Your Valuable Feedback is appreciated">Please Share Your Valuable Feedback Here</a>
+            </div>
+            <div class="box3">
+                <p>Contact Us|
+                    Privacy Policy|
+                    Terms & Conditions|
+                    Gifting Policy|
+                    Online payment & refund policy|
+                    Tele-consult|
+                    Contact
+                    <br>
+                    © 2022 Rank Bridge. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="/nimcetmock1.js"></script>
+</body>
+</html>

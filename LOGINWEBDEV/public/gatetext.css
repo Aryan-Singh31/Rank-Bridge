@@ -1,0 +1,165 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url(images/gatetestbg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.nav{
+    border: 2px solid black;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-color: azure;
+    padding: 30px;
+    margin: 10px;
+    margin-bottom: 20px;
+}
+a {
+    text-decoration: none;
+    color: black;
+   
+}
+.search-bar {
+    width: 400px; /* Increase width */
+    height: 40px; /* Adjust height if needed */
+    border: 2px solid #333; /* Darker border */
+    border-radius: 5px; /* Optional rounded corners */
+    padding: 0 10px; /* Add padding inside the search bar */
+    font-size: 16px; /* Adjust text size */
+}
+ .search-bar:focus {
+    border-color: #000;
+    outline: none; 
+} 
+.searchcontainer{
+    display: flex; /* Align search bar and button side by side */
+    align-items: center; /* Center items vertically */
+    gap: 2px;
+}
+.searchbutton{
+    width: 150px;
+    border: solid 2px black;
+    height: 34px;
+    background-color: rgb(82, 138, 202);
+    color: white;
+    transition:transform 0.3s;
+   border-radius: 2px;
+}
+.searchbutton:hover{
+    transform: scale(1.04);
+}
+.navlogo{
+    height: 150px;
+}
+.navlinks{
+    display: flex;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    gap: 20px;
+    padding: 20px;
+    margin: 5px;
+}
+.mock-list {
+    margin: 70px;
+    display: flex;
+    overflow-y: auto;
+    max-height: 50vh;
+    gap: 10px;
+    flex-wrap: wrap;
+    border: 2px solid rgb(24, 24, 22);
+    background-color: rgba(255, 255, 255, 0.332);
+}
+
+.mock{
+    width: 600px;
+    height: 140px;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 5px;
+    background-color: #2a2c41;
+    position: relative;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 40px;
+   
+}
+.heading{
+    font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgb(155, 154, 162);
+    opacity: 0.89;
+    color: rgb(0, 0, 0);
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
+    position: relative;
+
+}
+.NIMCET{
+    display: inline-block;
+    font-size: 50px;
+    font-weight: bold;
+    color: #333;
+    animation: marquee 8s linear infinite;
+
+}
+@keyframes marquee {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(+100%);
+    }
+}
+
+
+.footer{
+    
+    display: flex;
+    box-sizing: border-box;
+    /* height: 250px; */
+    /* width: 100%; */
+    justify-content: space-between;
+    background-color:rgb(43, 37, 37);
+    color: white;
+    padding: 30px;
+    margin: 10px;
+    margin-top: 40px;
+}
+.box1{
+    height: 100%;
+    width: 33%;
+}
+.ftimg1{
+    padding: 0;
+    margin: 0;
+    width: 50%;
+}
+.box2{
+    height: 100%;
+    width: 33%;
+}
+.ftimg{
+    height: 20%;
+    width: 10%;
+    transition: transform 0.3s, filter 0.3s;
+}
+.box3{
+    height: 100%;
+    width: 33%;
+}
+.ftimg:hover {
+    transform: scale(1.1);
+    filter: brightness(0.8);
+}
+.fta{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}

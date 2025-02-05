@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main1.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <img src="/images/finall.png" alt="Logo" class="navlogo">
+            <div class="searchcontainer">
+                <input type="search" class="search-bar" placeholder="Search...">
+                <button class="searchbutton">Search</button>
+            </div>
+            <div class="navlinks">
+                <a href="/" class="navi">HOME</a>
+                <a href="#" class="navi">COURSE</a>
+                <a href="/aboutus" class="navi">ABOUT US</a>
+                <% if (user) { %>
+                    <a href="#" class="navi">Hello, <%= user.name %></a>
+                    <a href="/logout" class="navi">LOGOUT</a>
+                <% } else { %>
+                    <a href="/login" class="navi">LOGIN/SIGNUP</a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+        <div class="testbox">
+            <a href="/nimcet">
+    <div class="card" style="box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.845);;" >
+        <img src="images/nimcet.jpeg" alt="" class="img1">
+    </div>
+</a>
+<a href="/jee">
+    <div class="card" style="box-shadow: 15px 15px 15px  rgba(178, 178, 45, 0.685);;">
+        <img src="images/jee-main-2025.webp" alt="" class="img1">
+    </div>
+</a>
+<a href="/neet">
+    <div class="card" style="box-shadow: 15px 15px 15px rgba(0, 166, 255, 0.82)"";;>
+        <img src="images/neet.jpg" alt="" class="img1">
+    </div>
+</a>
+<a href="/gatepyq">
+    <div class="card" style="box-shadow: 15px 15px 15px rgba(255, 0, 0, 0.562)";;>
+        <img src="images/gateimg.jpg" alt="" class="img1">
+    </div>
+</a>
+<a href="/cuetpyq">
+    <div class="card" style="box-shadow: 15px 15px 15px rgba(0, 0, 255, 0.614)"";;>
+        <img src="images/cuet.webp" alt="" class="img1">
+    </div>
+</a>
+<a href="/upscpyq">
+    <div class="card" style="box-shadow: 15px 15px 15px  rgba(154, 46, 46, 0.726)"";;>
+        <img src="images/upsc.jpg" alt="" class="img1">
+    </div>
+</a>
+        </div>
+        <div class="footer">
+            <div class="box1">
+                <img src="images/finall.png" alt="" class="ftimg1">
+                <p>Plot No.34,35<br>Knowledge Park I,Greater Noida <br>Uttar Pradesh-201310</p>
+            </div>
+            <div class="box2">
+                <h3>STAY IN TOUCH</h3>
+                <br><br>
+                <img src="images/instagrame.png" alt="" class="ftimg">
+                <img src="images/facebook.png" alt=""  class="ftimg">
+                <img src="images/youtube.png" alt=""  class="ftimg">
+                <img src="images/twitter.png" alt=""  class="ftimg">
+                <br> <br>
+                <a href="" class="fta" title="Your Valuable Feedback is appreciated">Please Share Your Valuable Feedback Here</a>
+            </div>
+            <div class="box3">
+                <p>Contact Us|
+                    Privacy Policy|
+                    Terms & Conditions|
+                    Gifting Policy|
+                    Online payment & refund policy|
+                    Tele-consult|
+                    Contact
+                    <br>
+                    © 2022 Rank Bridge. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -17,7 +17,17 @@
                 </div>
                 <div class="navlinks">
                     <a href="index.html">HOME</a>
-                    <a href="">COURSE</a>
+                    <form>
+                        <select class="navi" id="dropdown" name="course" onchange="location = this.value;">
+                            <option value="" selected disabled>COURSE</option>
+                            <option value="nimcetcard.html">NIMCET</option>
+                            <option value="jeecard.html">JEE</option>
+                            <option value="neetcard.html">NEET</option>
+                            <option value="gatecard.html">GATE</option>
+                            <option value="upsccard.html">UPSC</option>
+                            <option value="cuetcard.html">CUET</option>
+                        </select>
+                    </form>
                     <a href="aboutus.html">ABOUT-US</a>
                     <a href="login.html">LOGIN/SIGNUP</a>
                 </div>

@@ -58,7 +58,19 @@
 .searchbutton:hover {
     transform: scale(1.04);
 }
-
+#dropdown {
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: azure;
+    cursor: pointer;
+    font-weight: bold;
+}
+#dropdown:hover,
+#dropdown:focus {
+    background-color: rgb(82, 138, 202);
+    color: white;
+}
 .footer {
     display: flex;
     box-sizing: border-box;

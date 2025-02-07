@@ -57,6 +57,19 @@
     padding: 20px;
     margin: 5px;
 }
+#dropdown {
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: azure;
+    cursor: pointer;
+    font-weight: bold;
+}
+#dropdown:hover,
+#dropdown:focus {
+    background-color: rgb(82, 138, 202);
+    color: white;
+}
 .bgquote{
     padding: 10px;
     margin: 10px;

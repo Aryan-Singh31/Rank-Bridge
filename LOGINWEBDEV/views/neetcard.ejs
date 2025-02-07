@@ -16,7 +16,17 @@
             </div>
             <div class="navlinks">
                 <a href="/" class="navi">HOME</a>
-                <a href="#" class="navi">COURSE</a>
+                <form>
+                    <select class="navi" id="dropdown" name="course" onchange="location = this.value;">
+                        <option value="" selected disabled>COURSE</option>
+                        <option value="/nimcetcard">NIMCET</option>
+                        <option value="/jeecard">JEE</option>
+                        <option value="/neetcard">NEET</option>
+                        <option value="/gatecard">GATE</option>
+                        <option value="/upsccard">UPSC</option>
+                        <option value="/cuetcard">CUET</option>
+                    </select>
+                </form>
                 <a href="/aboutus" class="navi">ABOUT US</a>
                 <% if (user) { %>
                     <a href="#" class="navi">Hello, <%= user.name %></a>
@@ -82,7 +92,7 @@
                 <img src="images/youtube.png" alt=""  class="ftimg">
                 <img src="images/twitter.png" alt=""  class="ftimg">
                 <br> <br>
-                <a href="" class="fta" title="Your Valuable Feedback is appreciated">Please Share Your Valuable Feedback Here</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfOpcU8cbbrYQye162CplfwUvbeWzXo95Num8Q_rK-m50QFCA/viewform?usp=sharing" class="fta" title="Your Valuable Feedback is appreciated">Please Share Your Valuable Feedback Here</a>
             </div>
             <div class="box3">
                 <p>Contact Us|

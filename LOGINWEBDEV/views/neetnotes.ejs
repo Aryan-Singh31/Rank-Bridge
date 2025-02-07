@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEET Notes</title>
+    <link rel="stylesheet" href="/neetnotes.css">
+</head>
+<body>
+  
+    <header>
+        <div class="cont">
+            <div class="nav">
+                <img src="/images/finall.png" alt="Logo" class="navlogo">
+                <div class="searchcontainer">
+                    <input type="search" class="search-bar" placeholder="Search...">
+                    <button class="searchbutton">Search</button>
+                </div>
+                <div class="navlinks">
+                    <a href="/" class="navi">HOME</a>
+                    <form>
+                        <select class="navi" id="dropdown" name="course" onchange="location = this.value;">
+                            <option value="" selected disabled>COURSE</option>
+                            <option value="/nimcetcard">NIMCET</option>
+                            <option value="/jeecard">JEE</option>
+                            <option value="/neetcard">NEET</option>
+                            <option value="/gatecard">GATE</option>
+                            <option value="/upsccard">UPSC</option>
+                            <option value="/cuetcard">CUET</option>
+                        </select>
+                    </form>
+                    <a href="/aboutus" class="navi">ABOUT US</a>
+                    <% if (user) { %>
+                        <a href="#" class="navi">Hello, <%= user.name %></a>
+                        <a href="/logout" class="navi">LOGOUT</a>
+                    <% } else { %>
+                        <a href="/login" class="navi">LOGIN/SIGNUP</a>
+                    <% } %>
+                </div>
+            </div>
+        </div>  
+    </header>
+
+    <div class="container">
+        <h2 class="topic-heading">NEET Exam Notes</h2>
+
+        <h2 class="topic-heading">1. Physics Formulae</h2>
+        <div class="section">
+            <h3 class="topic-heading">Mechanics</h3>
+            <ul class="notes-list">
+                <li>Projectile Motion:
+                    <pre>Max Height: H = (u²sin²θ)/(2g)</pre>
+                    <pre>Range: R = (u²sin2θ)/g</pre>
+                </li>
+                <li>Work-Energy Theorem:
+                    <pre>W = ΔKE = ½m(v² - u²)</pre>
+                </li>
+                <li>Circular Motion:
+                    <pre>Centripetal Force: F = mv²/r = mω²r</pre>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h3 class="topic-heading">Electrodynamics</h3>
+            <ul class="notes-list">
+                <li>Gauss's Law:
+                    <pre>∮E·dA = Q/ε₀</pre>
+                </li>
+                <li>Faraday's Law:
+                    <pre>ε = -dΦ/dt</pre>
+                </li>
+            </ul>
+        </div>
+    
+    <div class="section">
+        <div class="section">
+            <h3 class="topic-heading">Modern Physics</h3>
+            <ul class="notes-list">
+                <li>Photoelectric Effect:
+                    <pre>Einstein's Equation: hν = φ + ½mv²</pre>
+                    <pre>Stopping Potential: eV₀ = hν - φ</pre>
+                </li>
+                <li>Bohr's Model:
+                    <pre>Radius: rₙ = (n²h²)/(4π²mZe²)</pre>
+                    <pre>Energy Levels: Eₙ = -13.6Z²/n² eV</pre>
+                </li>
+                <li>De Broglie Wavelength:
+                    <pre>λ = h/(mv)</pre>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h3 class="topic-heading">Thermodynamics</h3>
+            <ul class="notes-list">
+                <li>First Law:
+                    <pre>ΔU = Q - W</pre>
+                </li>
+                <li>Heat Transfer:
+                    <pre>Conduction: Q/t = (kAΔT)/d</pre>
+                    <pre>Stefan's Law: P = εσAT⁴</pre>
+                </li>
+                <li>Carnot Engine:
+                    <pre>Efficiency η = 1 - T₂/T₁</pre>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h3 class="topic-heading">SHM & Waves</h3>
+            <ul class="notes-list">
+                <li>Simple Harmonic Motion:
+                    <pre>Displacement: x = A sin(ωt + φ)</pre>
+                    <pre>Energy: E = ½mω²A²</pre>
+                </li>
+                <li>Wave Equation:
+                    <pre>y = A sin(kx - ωt)</pre>
+                    <pre>Speed: v = fλ</pre>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h3 class="topic-heading">Optics</h3>
+            <ul class="notes-list">
+                <li>Lens Maker's Formula:
+                    <pre>1/f = (μ-1)(1/R₁ - 1/R₂)</pre>
+                </li>
+                <li>Young's Double Slit:
+                    <pre>Fringe Width: β = λD/d</pre>
+                </li>
+                <li>Snell's Law:
+                    <pre>μ₁ sinθ₁ = μ₂ sinθ₂</pre>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h3 class="topic-heading">Semiconductors</h3>
+            <ul class="notes-list">
+                <li>Diode Current:
+                    <pre>I = I₀(e^(V/ηV_T) - 1)</pre>
+                </li>
+                <li>Logic Gates:
+                    <pre>NAND: Complement of AND</pre>
+                    <pre>NOR: Complement of OR</pre>
+                </li>
+                <li>Transistor:
+                    <pre>β = I_c/I_b</pre>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    
+    <div class="section tips">
+        <h3 class="topic-heading">Physics Preparation Tips</h3>
+        <ul class="notes-list">
+            <li><strong>Focus Areas:</strong>
+                <ul>
+                    <li>Modern Physics (20% weightage)</li>
+                    <li>Electrodynamics (18% weightage)</li>
+                    <li>Mechanics (25% weightage)</li>
+                </ul>
+            </li>
+            <li><strong>Quick Formulas:</strong>
+                <pre>Projectile Range: R = u² sin2θ/g</pre>
+                <pre>Capacitance: C = ε₀A/d</pre>
+            </li>
+            <li><strong>Common Mistakes:</strong>
+                <ul>
+                    <li>Sign conventions in optics</li>
+                    <li>Unit conversions in thermodynamics</li>
+                    <li>Direction in electromagnetic induction</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+        
+
+    <div class="section">
+        <h2 class="topic-heading">2. Chemistry Notes</h2>
+    
+        <div class="section">
+            <h3 class="topic-heading">Physical Chemistry</h3>
+            <ul class="notes-list">
+                <li>Chemical Bonding:
+                    <pre>VSEPR Theory Shapes: Linear(180°), Trigonal Planar(120°), Tetrahedral(109.5°)</pre>
+                </li>
+                <li>Electrochemistry:
+                    <pre>Nernst Equation: E = E° - (RT/nF)lnQ</pre>
+                    <pre>Faraday's Laws: m = ZIt</pre>
+                </li>
+                <li>Solutions:
+                    <pre>Raoult's Law: P = X₁P₁°</pre>
+                    <pre>Van't Hoff Factor: i = (observed colligative property)/(normal colligative property)</pre>
+                </li>
+            </ul>
+        </div>
+    
+        <div class="section">
+            <h3 class="topic-heading">Organic Chemistry</h3>
+            <ul class="notes-list">
+                <li>Named Reactions:
+                    <pre>Clemmensen Reduction: RCO → RCH₂ (using Zn-Hg/HCl)</pre>
+                    <pre>Hoffmann Bromamide: RCONH₂ → RNH₂ (using Br₂/NaOH)</pre>
+                </li>
+                <li>Stereoisomerism:
+                    <pre>Optical Activity: d/l configuration using Cahn-Ingold-Prelog rules</pre>
+                </li>
+            </ul>
+        </div>
+    
+        <div class="section">
+            <h3 class="topic-heading">Inorganic Chemistry</h3>
+            <ul class="notes-list">
+                <li>Coordination Compounds:
+                    <pre>CFSE Formula: Δ₀ = 0.4 × Pairing Energy</pre>
+                    <pre>Werner's Theory: Primary & Secondary Valency</pre>
+                </li>
+                <li>Periodic Table Trends:
+                    <pre>Ionization Energy: Increases across period, decreases down group</pre>
+                    <pre>Electron Gain Enthalpy: Highest in Group 17</pre>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    
+    <div class="section tips">
+        <h3 class="topic-heading">Chemistry Mastery Tips</h3>
+        <ul class="notes-list">
+            <li><strong>Memorization Tricks:</strong>
+                <pre>"OIL RIG" → Oxidation Is Loss, Reduction Is Gain (Electrons)</pre>
+                <pre>"LEO says GER" → Lose Electrons Oxidation, Gain Electrons Reduction</pre>
+            </li>
+            
+            <li><strong>Common Mistakes:</strong>
+                <ul>
+                    <li>Confusing SN1 vs SN2 mechanisms</li>
+                    <li>Forgetting dπ-pπ bonding in coordination compounds</li>
+                    <li>Miscalculating equivalent weights in stoichiometry</li>
+                </ul>
+            </li>
+    
+            <li><strong>High-Weightage Topics:</strong>
+                <table class="weightage-table">
+                    <tr>
+                        <th>Topic</th>
+                        <th>Weightage</th>
+                    </tr>
+                    <tr>
+                        <td>Chemical Bonding</td>
+                        <td>18%</td>
+                    </tr>
+                    <tr>
+                        <td>Coordination Compounds</td>
+                        <td>15%</td>
+                    </tr>
+                    <tr>
+                        <td>Organic Reaction Mechanisms</td>
+                        <td>22%</td>
+                    </tr>
+                </table>
+            </li>
+    
+            <li><strong>Lab Techniques:</strong>
+                <pre>Chromatography: Rf = Distance by spot/Distance by solvent</pre>
+                <pre>Distillation: Simple vs Fractional</pre>
+            </li>
+        </ul>
+    </div>
+    
+    
+        
+    <h2 class="topic-heading">NEET Biology Notes</h2>
+
+    <div class="section">
+        <h3>Cell Structure and Function</h3>
+        <ul class="notes-list">
+            <li><strong>Cell Theory:</strong> All living organisms are made of cells.</li>
+            <li><strong>Prokaryotic vs Eukaryotic:</strong> Nucleus absent in prokaryotes.</li>
+            <li><strong>Cell Organelles:</strong> Mitochondria (ATP), Ribosomes (Protein synthesis).</li>
+        </ul>
+        <p class="tips">🔹 Tip: Memorize functions of organelles using acronyms like "MGR" (Mitochondria - Energy, Golgi - Packaging, Ribosomes - Protein).</p>
+    </div>
+
+    <div class="section">
+        <h3>Biomolecules</h3>
+        <ul class="notes-list">
+            <li><strong>Carbohydrates:</strong> Main energy source (Glucose - C₆H₁₂O₆).</li>
+            <li><strong>Proteins:</strong> Amino acids, Enzymes.</li>
+            <li><strong>Lipids:</strong> Fats & steroids, cell membrane components.</li>
+        </ul>
+        <p class="tips">🔹 Tip: Learn molecular structures using flashcards.</p>
+    </div>
+
+    <div class="section">
+        <h3>Genetics & Evolution</h3>
+        <ul class="notes-list">
+            <li><strong>Mendel’s Laws:</strong> Dominance, Segregation, Independent Assortment.</li>
+            <li><strong>Mutation:</strong> Sudden change in DNA sequence.</li>
+            <li><strong>Darwin’s Theory:</strong> Survival of the fittest.</li>
+        </ul>
+        <p class="tips">🔹 Tip: Solve pedigree chart questions for practice.</p>
+    </div>
+
+    <div class="section">
+        <h3>Human Physiology</h3>
+        <ul class="notes-list">
+            <li><strong>Digestive System:</strong> Enzymes - Amylase (Carbs), Pepsin (Proteins).</li>
+            <li><strong>Respiratory System:</strong> Gas exchange in alveoli.</li>
+            <li><strong>Circulatory System:</strong> Heart chambers, blood circulation.</li>
+        </ul>
+        <p class="tips">🔹 Tip: Practice labeling diagrams to improve memory.</p>
+    </div>
+
+    
+</div>
+    <div class="footer">
+        <div class="box1">
+            <img src="images/finall.png" alt="" class="ftimg1">
+            <p>Plot No.34,35<br>Knowledge Park I, Greater Noida<br>Uttar Pradesh-201310</p>
+        </div>
+        <div class="box2">
+            <h3>STAY IN TOUCH</h3>
+            <br>
+            <img src="images/instagrame.png" alt="" class="ftimg">
+            <img src="images/facebook.png" alt="" class="ftimg">
+            <img src="images/youtube.png" alt="" class="ftimg">
+            <img src="images/twitter.png" alt="" class="ftimg">
+            <br> <br>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfOpcU8cbbrYQye162CplfwUvbeWzXo95Num8Q_rK-m50QFCA/viewform?usp=sharing" class="fta">Please Share Your Valuable Feedback Here</a>
+        </div>
+        <div class="box3">
+            <p>Contact Us | Privacy Policy | Terms & Conditions | Gifting Policy | Online payment & refund policy | Tele-consult | Contact
+            <br> © 2022 Rank Bridge. All Rights Reserved.</p>
+    </div>
+</body>
+</html>

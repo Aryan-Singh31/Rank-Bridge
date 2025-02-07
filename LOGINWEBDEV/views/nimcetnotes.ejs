@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIMCET Notes</title>
+    <link rel="stylesheet" href="/nimcetnotes.css">
+</head>
+<body>
+    <header>
+        <div class="cont">
+            <div class="nav">
+                <img src="/images/finall.png" alt="Logo" class="navlogo">
+                <div class="searchcontainer">
+                    <input type="search" class="search-bar" placeholder="Search...">
+                    <button class="searchbutton">Search</button>
+                </div>
+                <div class="navlinks">
+                    <a href="/" class="navi">HOME</a>
+                    <form>
+                        <select class="navi" id="dropdown" name="course" onchange="location = this.value;">
+                            <option value="" selected disabled>COURSE</option>
+                            <option value="/nimcetcard">NIMCET</option>
+                            <option value="/jeecard">JEE</option>
+                            <option value="/neetcard">NEET</option>
+                            <option value="/gatecard">GATE</option>
+                            <option value="/upsccard">UPSC</option>
+                            <option value="/cuetcard">CUET</option>
+                        </select>
+                    </form>
+                    <a href="/aboutus" class="navi">ABOUT US</a>
+                    <% if (user) { %>
+                        <a href="#" class="navi">Hello, <%= user.name %></a>
+                        <a href="/logout" class="navi">LOGOUT</a>
+                    <% } else { %>
+                        <a href="/login" class="navi">LOGIN/SIGNUP</a>
+                    <% } %>
+                </div>
+            </div>
+        </div>  
+    </header>
+    <main>
+        <div class="container">
+            <h2 class="main-heading">NIMCET Notes</h2>
+
+            <!-- Mathematics Section -->
+            <div class="section">
+                <h2 class="topic-heading">1. Mathematics Formulae for NIMCET</h2>
+
+                <!-- Algebra -->
+                <div class="section">
+                    <h3 class="topic-heading">Algebra</h3>
+                    <ul class="notes-list">
+                        <li>Quadratic Equation: <pre>ax^2 + bx + c = 0</pre></li>
+                        <li>Roots of a Quadratic Equation: <pre>x = [-b ± √(b²-4ac)] / 2a</pre></li>
+                    </ul>
+                </div>
+
+                <!-- Geometry -->
+                <div class="section">
+                    <h3 class="topic-heading">Geometry</h3>
+                    <ul class="notes-list">
+                        <li>Area of a Circle: <pre>A = πr²</pre></li>
+                        <li>Area of a Triangle: <pre>A = ½bh</pre></li>
+                        <li>Area of a Rectangle: <pre>A = l × b</pre></li>
+                    </ul>
+                </div>
+
+                <!-- Trigonometry -->
+                <div class="section">
+                    <h3 class="topic-heading">Trigonometry</h3>
+                    <ul class="notes-list">
+                        <li>Basic Trigonometric Ratios: <pre>sin(θ) = opposite/hypotenuse</pre></li>
+                        <li>tan(θ) = sin(θ) / cos(θ)</li>
+                        <li>cos(θ) = adjacent/hypotenuse</li>
+                    </ul>
+                </div>
+
+                <!-- Coordinate Geometry -->
+                <div class="section">
+                    <h3 class="topic-heading">Coordinate Geometry</h3>
+                    <ul class="notes-list">
+                        <li>Distance Formula: <pre>d = √[(x₂ - x₁)² + (y₂ - y₁)²]</pre></li>
+                        <li>Midpoint Formula: <pre>M = [(x₁ + x₂)/2, (y₁ + y₂)/2]</pre></li>
+                    </ul>
+                </div>
+
+                <!-- Probability -->
+                <div class="section">
+                    <h3 class="topic-heading">Probability</h3>
+                    <ul class="notes-list">
+                        <li>Probability Formula: <pre>P(A) = (Number of favorable outcomes) / (Total number of outcomes)</pre></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Reasoning Section Below Mathematics -->
+            <div class="section">
+                <h2 class="topic-heading">2. Reasoning</h2>
+
+                <!-- Number Series Section -->
+                <div class="section">
+                    <h3 class="topic-heading">Number Series</h3>
+                    <ul class="notes-list">
+                        <li>Arithmetic Series: <pre>an = a1 + (n - 1) * d</pre></li>
+                        <li>Geometric Series: <pre>an = a1 * r^(n - 1)</pre></li>
+                    </ul>
+                </div>
+
+                <!-- Venn Diagram Section -->
+                <div class="section">
+                    <h3 class="topic-heading">Venn Diagrams</h3>
+                    <ul class="notes-list">
+                        <li><strong>Union of Sets (A ∪ B):</strong> The union represents all elements in both sets.</li>
+                        <li><strong>Intersection of Sets (A ∩ B):</strong> The intersection represents elements common to both sets.</li>
+                    </ul>
+                    <img src="images/vennDiagram.webp"  class="notesImage" alt="Venn Diagram Example" class="diagram-img">
+                </div>
+
+                <!-- Blood Relations Section -->
+                <div class="section">
+                    <h3 class="topic-heading">Blood Relations</h3>
+                    <ul class="notes-list">
+                        <li>Father's Brother = Uncle</li>
+                        <li>Mother's Sister = Aunt</li>
+                        <li>Grandfather = Father's Father</li>
+                    </ul>
+                    <img src="images/bloodRel.jpeg" class="notesImage" alt="Blood Relation Example" class="diagram-img">
+                </div>
+
+                <!-- Seating Arrangement Section -->
+                <div class="section">
+                    <h3 class="topic-heading">Seating Arrangement</h3>
+                    <ul class="notes-list">
+                        <li><strong>Circular Seating Arrangement:</strong> A seating arrangement in a circle requires you to fix one person and arrange others relative to them.</li>
+                        <li><strong>Linear Seating Arrangement:</strong> A linear arrangement where people are seated either facing towards or away from a reference point.</li>
+                    </ul>
+                    <img src="images/SeatingArrangements.png" class="notesImage" alt="Seating Arrangement Example" class="diagram-img">
+                </div>
+
+                <!-- Clock Formula Section -->
+                <div class="section">
+                    <h3 class="topic-heading">Clock Formula</h3>
+                    <ul class="notes-list">
+                        <li>Formula for the angle between hour and minute hands: <pre>Angle = |30*H - (11/2)*M|</pre></li>
+                    </ul>
+                    <img src="images/clock.png" class="notesImage" alt="Clock Angle Example" class="diagram-img">
+                </div>
+
+                <!-- Direction Sense Section -->
+                <div class="section">
+                    <h3 class="topic-heading">Direction Sense</h3>
+                    <ul class="notes-list">
+                        <li><strong>Basic Directions:</strong> North, South, East, West.</li>
+                        <li><strong>90-degree Turns:</strong> Turning right or left changes the direction by 90 degrees.</li>
+                    </ul>
+                    <img src="images/Direction-Sense.png" class="notesImage" alt="Direction Sense Example" class="diagram-img">
+                </div>
+
+                <!-- Tips and Tricks Section -->
+                <div class="section tips">
+                    <h3 class="topic-heading">Tips & Tricks for NIMCET Preparation</h3>
+                    <ul class="notes-list">
+                        <li><strong>Time Management:</strong> Prioritize weak subjects and take short, regular breaks.</li>
+                        <li><strong>Conceptual Clarity:</strong> Understand the concepts thoroughly instead of memorizing patterns.</li>
+                        <li><strong>Practice Regularly:</strong> The more you practice, the better you'll get at recognizing patterns.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Computer Science Section Below Reasoning -->
+            <div class="section">
+                <h2 class="topic-heading">3. Computer Science Notes for NIMCET</h2>
+
+                <!-- Computer Networks -->
+                <div class="section">
+                    <h3 class="topic-heading">Computer Networks</h3>
+                    <ul class="notes-list">
+                        <li><strong>OSI Model:</strong> The OSI model is a conceptual framework used to understand network interactions in seven layers: 
+                            <ul>
+                                <li><strong>Layer 1 (Physical):</strong> Deals with physical devices and media.</li>
+                                <li><strong>Layer 2 (Data Link):</strong> Responsible for node-to-node data transfer and error correction.</li>
+                                <li><strong>Layer 3 (Network):</strong> Handles routing of data packets (e.g., IP).</li>
+                                <li><strong>Layer 4 (Transport):</strong> Ensures reliable data transfer (e.g., TCP).</li>
+                                <li><strong>Layer 5 (Session):</strong> Manages sessions between applications.</li>
+                                <li><strong>Layer 6 (Presentation):</strong> Translates data formats between systems.</li>
+                                <li><strong>Layer 7 (Application):</strong> Supports application-level protocols (e.g., HTTP).</li>
+                            </ul>
+                        </li>
+                        <li><strong>IP Addressing:</strong> An IP address is a unique identifier for devices on a network. The IP address can be IPv4 or IPv6.</li>
+                    </ul>
+                </div>
+
+                <!-- Data Structures and Algorithms -->
+                <div class="section">
+                    <h3 class="topic-heading">Data Structures and Algorithms</h3>
+                    <ul class="notes-list">
+                        <li><strong>Arrays:</strong> A collection of elements identified by index or key.</li>
+                        <li><strong>Stacks:</strong> A stack follows Last In First Out (LIFO) principle.</li>
+                        <li><strong>Quick Sort:</strong> A divide-and-conquer algorithm for sorting.</li>
+                    </ul>
+                </div>
+
+                <!-- Operating Systems -->
+                <div class="section">
+                    <h3 class="topic-heading">Operating Systems</h3>
+                    <ul class="notes-list">
+                        <li><strong>Process Control Block (PCB):</strong> Stores information about a process.</li>
+                        <li><strong>Memory Management:</strong> Techniques like paging, segmentation, and virtual memory are used.</li>
+                    </ul>
+                </div>
+
+                <!-- Database Management Systems -->
+                <div class="section">
+                    <h3 class="topic-heading">Database Management Systems</h3>
+                    <ul class="notes-list">
+                        <li><strong>SQL:</strong> The standard language for relational databases.</li>
+                        <li><strong>Normalization:</strong> The process of organizing data in a database.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="topic-heading">4. English Notes for NIMCET</h2>
+
+                <div class="section">
+                    <h3 class="topic-heading">English Grammar Rules</h3>
+                    <ul class="notes-list">
+                        <li><strong>Subject-Verb Agreement:</strong> Singular subjects take singular verbs, and plural subjects take plural verbs.</li>
+                        <li><strong>Tense Usage:</strong> Use of present, past, and future tenses in different contexts.</li>
+                        <li><strong>Articles:</strong> Use of 'a', 'an', and 'the' in different contexts.</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h3 class="topic-heading">Reading Comprehension Tips</h3>
+                    <ul class="notes-list">
+                        <li><strong>Skimming:</strong> Read quickly to get the main idea.</li>
+                        <li><strong>Scanning:</strong> Look for specific information.</li>
+                        <li><strong>Inference:</strong> Draw conclusions based on the passage.</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h3 class="topic-heading">Vocabulary Building</h3>
+                    <ul class="notes-list">
+                        <li><strong>Synonyms:</strong> Words that have the same or similar meanings.</li>
+                        <li><strong>Antonyms:</strong> Words that have opposite meanings.</li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <div class="box1">
+            <img src="images/finall.png" alt="" class="ftimg1">
+            <p>Plot No.34,35<br>Knowledge Park I,Greater Noida <br>Uttar Pradesh-201310</p>
+        </div>
+        <div class="box2">
+            <h3>STAY IN TOUCH</h3>
+            <br><br>
+            <img src="images/instagrame.png" alt="" class="ftimg">
+            <img src="images/facebook.png" alt=""  class="ftimg">
+            <img src="images/youtube.png" alt=""  class="ftimg">
+            <img src="images/twitter.png" alt=""  class="ftimg">
+            <br> <br>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfOpcU8cbbrYQye162CplfwUvbeWzXo95Num8Q_rK-m50QFCA/viewform?usp=sharing" class="fta" title="Your Valuable Feedback is appreciated">Please Share Your Valuable Feedback Here</a>
+        </div>
+        <div class="box3">
+            <p>Contact Us|
+                Privacy Policy|
+                Terms & Conditions|
+                Gifting Policy|
+                Online payment & refund policy|
+                Tele-consult|
+                Contact
+                <br>
+                © 2022 Rank Bridge. All Rights Reserved.</p>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -17,7 +17,17 @@
                     </div>
                     <div class="navlinks">
                         <a href="/" class="navi">HOME</a>
-                        <a href="#" class="navi">COURSE</a>
+                        <form>
+                            <select class="navi" id="dropdown" name="course" onchange="location = this.value;">
+                                <option value="" selected disabled>COURSE</option>
+                                <option value="/nimcetcard">NIMCET</option>
+                                <option value="/jeecard">JEE</option>
+                                <option value="/neetcard">NEET</option>
+                                <option value="/gatecard">GATE</option>
+                                <option value="/upsccard">UPSC</option>
+                                <option value="/cuetcard">CUET</option>
+                            </select>
+                        </form>
                         <a href="/aboutus" class="navi">ABOUT US</a>
                         <% if (user) { %>
                             <a href="#" class="navi">Hello, <%= user.name %></a>
@@ -46,7 +56,7 @@
     <footer>
         <footer><div class="footer">
             <div class="box1">
-                <img src="finall.png" alt="" class="ftimg1">
+                <img src="images/finall.png" alt="" class="ftimg1">
                 <p>Plot No.34,35<br>Knowledge Park I,Greater Noida <br>Uttar Pradesh-201310</p>
             </div>
             <div class="box2">
@@ -57,7 +67,7 @@
                 <img src="images/youtube.png" alt=""  class="ftimg">
                 <img src="images/twitter.png" alt=""  class="ftimg">
                 <br> <br>
-                <a href="" class="fta" title="Your Valuable Feedback is appreciated">Please Share Your Valuable Feedback Here</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfOpcU8cbbrYQye162CplfwUvbeWzXo95Num8Q_rK-m50QFCA/viewform?usp=sharing" class="fta" title="Your Valuable Feedback is appreciated">Please Share Your Valuable Feedback Here</a>
             </div>
             <div class="box3">
                 <p>Contact Us|

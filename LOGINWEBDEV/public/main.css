@@ -16,7 +16,7 @@
     padding: 30px;
     margin: 10px;
 }
-a{
+a {
     text-decoration: none;
     color: black;  
 }
@@ -59,6 +59,19 @@ a{
     gap: 20px;
     padding: 20px;
     margin: 5px;
+}
+#dropdown {
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: azure;
+    cursor: pointer;
+    font-weight: bold;
+}
+#dropdown:hover,
+#dropdown:focus {
+    background-color: rgb(82, 138, 202);
+    color: white;
 }
 .testbox{
     display: grid;

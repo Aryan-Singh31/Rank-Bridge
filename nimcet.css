@@ -23,8 +23,7 @@ border: 1px solid red;
 }
 a {
   text-decoration: none;
-  color: black;
- 
+  color: black;  
 }
 .search-bar {
   width: 400px; /* Increase width */
@@ -61,12 +60,11 @@ a {
 .navlinks{
   display: flex;
   font-weight: bolder;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   gap: 20px;
   padding: 20px;
   margin: 5px;
 }
-
 /* header css end */
 body{
   background-color: rgb(21, 15, 12);

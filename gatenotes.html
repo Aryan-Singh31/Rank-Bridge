@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GATE Preparation</title>
+    <link rel="stylesheet" href="gatenotes.css"> 
+</head>
+<body>
+    <div class="nav">
+        <img src="images/finall.png" alt="GATE Logo" class="navlogo">
+        <div class="searchcontainer">
+            <input type="search" class="search-bar" placeholder="Search...">
+            <button class="searchbutton">Search</button>
+        </div>
+        <div class="navlinks">
+            <a href="index.html">HOME</a>
+            <form>
+                <select class="navi" id="dropdown" name="course" onchange="location = this.value;">
+                    <option value="" selected disabled>COURSE</option>
+                    <option value="nimcetcard.html">NIMCET</option>
+                    <option value="jeecard.html">JEE</option>
+                    <option value="neetcard.html">NEET</option>
+                    <option value="gatecard.html">GATE</option>
+                    <option value="upsccard.html">UPSC</option>
+                    <option value="cuetcard.html">CUET</option>
+                </select>
+            </form>
+            <a href="aboutus.html">ABOUT US</a>
+            <a href="login.html">LOGIN/SIGNUP</a>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <h2 class="main-heading">GATE Exam Notes</h2>
+
+            <div class="section">
+                <h2 class="topic-heading">1. Engineering Mathematics</h2>
+                <div class="section">
+                    <h3 class="topic-heading">Linear Algebra</h3>
+                    <ul class="notes-list">
+                        <li>Matrix Rank: <pre>rank(A) = Number of non-zero rows in REF</pre></li>
+                        <li>Eigen Values: <pre>|A - λI| = 0</pre></li>
+                        <li>Determinants: <pre>Det(A) = Product of Eigenvalues</pre></li>
+                        <li>Inverse of Matrix: <pre>A⁻¹ = adj(A) / det(A)</pre></li>
+                        <li>Systems of Equations: <pre>Ax = b has a unique solution if rank(A) = rank(A|b) = n</pre></li>
+                    </ul>
+                </div>
+                <div class="section">
+                    <h3 class="topic-heading">Calculus</h3>
+                    <ul class="notes-list">
+                        <li>Limit Definition: <pre>lim x→a f(x) = L</pre></li>
+                        <li>Derivative Rule: <pre>d/dx [x^n] = n*x^(n-1)</pre></li>
+                        <li>Integration Formula: <pre>∫ x^n dx = (x^(n+1))/(n+1) + C</pre></li>
+                        <li>Fundamental Theorem: <pre>d/dx ∫ f(t) dt = f(x)</pre></li>
+                        <li>Taylor Series: <pre>f(x) = f(a) + f'(a)(x-a) + f''(a)(x-a)^2/2! + ...</pre></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="topic-heading">2. Computer Science</h2>
+                <div class="section">
+                    <h3 class="topic-heading">Algorithms</h3>
+                    <ul class="notes-list">
+                        <li>Time Complexity:
+                            <pre>Merge Sort: O(n log n)</pre>
+                            <pre>BFS/DFS: O(V + E)</pre>
+                        </li>
+                        <li>Recurrence Relations: <pre>T(n) = 2T(n/2) + O(n)</pre></li>
+                        <li>Sorting Algorithms: <pre>QuickSort: O(n^2) worst case, O(n log n) avg case</pre></li>
+                        <li>Graph Algorithms: <pre>Dijkstra's Algorithm: O((V+E) log V)</pre></li>
+                        <li>Dynamic Programming: <pre>Fibonacci: O(n) using memoization</pre></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section tips">
+                <h3 class="topic-heading">GATE Preparation Tips</h3>
+                <ul class="notes-list">
+                    <li><strong>Section Weightage:</strong>
+                        <pre>Technical: 72% | Maths: 15% | Aptitude: 13%</pre>
+                    </li>
+                    <li><strong>Time Management:</strong>
+                        <pre>1-mark Q: 1.5 min | 2-mark Q: 3 min</pre>
+                    </li>
+                    <li><strong>Mock Tests:</strong>
+                        <pre>Attempt at least 10 full-length tests</pre>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <div class="footer">
+        <div class="box1">
+            <img src="images/finall.png" alt="" class="ftimg1">
+            <p>Plot No.34,35<br>Knowledge Park I,Greater Noida <br>Uttar Pradesh-201310</p>
+        </div>
+        <div class="box2">
+            <h3>STAY IN TOUCH</h3>
+            <br><br>
+            <img src="images/instagrame.png" alt="" class="ftimg">
+            <img src="images/facebook.png" alt=""  class="ftimg">
+            <img src="images/youtube.png" alt=""  class="ftimg">
+            <img src="images/twitter.png" alt=""  class="ftimg">
+            <br> <br>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfOpcU8cbbrYQye162CplfwUvbeWzXo95Num8Q_rK-m50QFCA/viewform?usp=sharing" class="fta" title="Your Valuable Feedback is appreciated">Please Share Your Valuable Feedback Here</a>
+        </div>
+        <div class="box3">
+            <p>Contact Us|
+                Privacy Policy|
+                Terms & Conditions|
+                Gifting Policy|
+                Online payment & refund policy|
+                Tele-consult|
+                Contact
+                <br>
+                © 2022 Rank Bridge. All Rights Reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

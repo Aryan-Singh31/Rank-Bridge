@@ -23,8 +23,7 @@ border: 1px solid red;
 }
 a {
   text-decoration: none;
-  color: black;
- 
+  color: black;  
 }
 .search-bar {
   width: 400px; /* Increase width */
@@ -61,12 +60,28 @@ a {
 .navlinks{
   display: flex;
   font-weight: bolder;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   gap: 20px;
   padding: 20px;
   margin: 5px;
 }
-
+.navi{
+  text-decoration: none;
+  color: black;  
+}
+#dropdown {
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  background-color: azure;
+  cursor: pointer;
+  font-weight: bold;
+}
+#dropdown:hover,
+#dropdown:focus {
+  background-color: rgb(82, 138, 202);
+  color: white;
+}
 /* header css end */
 body{
   background-color: rgb(21, 15, 12);

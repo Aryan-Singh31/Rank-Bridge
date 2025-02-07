@@ -3,7 +3,7 @@
 <head>
     <title>CUET</title>
     <link rel="stylesheet" href="cuetpyq.css">
-    <script src="https://kit.fontawesome.com/1b8d7a6831.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/1b8d7a6831.js" crossorigin="anonymous"></script> -->
 </head>
 <body>
     <!--Header-->
@@ -14,10 +14,20 @@
             <button class="searchbutton">Search</button>
         </div>
         <div class="navlinks">
-            <a href="">HOME</a>
-            <a href="">COURSE</a>
-            <a href="">ABOUT-US</a>
-            <a href="">LOGIN/SIGNUP</a>
+            <a href="index.html" class="navi">HOME</a>
+            <form>
+                <select class="navi" id="dropdown" name="course" onchange="location = this.value;">
+                    <option value="" selected disabled>COURSE</option>
+                    <option value="nimcetcard.html">NIMCET</option>
+                    <option value="jeecard.html">JEE</option>
+                    <option value="neetcard.html">NEET</option>
+                    <option value="gatecard.html">GATE</option>
+                    <option value="upsccard.html">UPSC</option>
+                    <option value="cuetcard.html">CUET</option>
+                </select>
+            </form>
+            <a href="aboutus.html" class="navi">ABOUT-US</a>
+            <a href="login.html" class="navi">LOGIN/SIGNUP</a>
         </div>
     </div>
 <!--Header End-->
@@ -31,7 +41,7 @@
 <!--Footer-->
     <div class="footer">
         <div class="box1">
-            <img src="finall.png" alt="" class="ftimg1">
+            <img src="images/finall.png" alt="" class="ftimg1">
             <p>Plot No.34,35<br>Knowledge Park I,Greater Noida <br>Uttar Pradesh-201310</p>
         </div>
         <div class="box2">
@@ -42,7 +52,7 @@
             <img src="images/youtube.png" alt=""  class="ftimg">
             <img src="images/twitter.png" alt=""  class="ftimg">
             <br> <br>
-            <a href="" class="fta" title="Your Valuable Feedback is appreciated">Please Share Your Valuable Feedback Here</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfOpcU8cbbrYQye162CplfwUvbeWzXo95Num8Q_rK-m50QFCA/viewform?usp=sharing" class="fta" title="Your Valuable Feedback is appreciated">Please Share Your Valuable Feedback Here</a>
         </div>
         <div class="box3">
             <p>Contact Us|

@@ -9,16 +9,26 @@
 <body>
     <!-- Navigation Bar -->
     <div class="nav">
-        <img src="finall.png" alt="Logo" class="navlogo">
+        <img src="images/finall.png" alt="Logo" class="navlogo">
         <div class="searchcontainer">
             <input type="search" class="search-bar" placeholder="Search...">
             <button class="searchbutton">Search</button>
         </div>
         <div class="navlinks">
-            <a href="#">HOME</a>
-            <a href="#">COURSE</a>
-            <a href="#">ABOUT US</a>
-            <a href="#">LOGIN/SIGNUP</a>
+            <a href="index.html">HOME</a>
+            <form>
+                <select class="navi" id="dropdown" name="course" onchange="location = this.value;">
+                    <option value="" selected disabled>COURSE</option>
+                    <option value="nimcetcard.html">NIMCET</option>
+                    <option value="jeecard.html">JEE</option>
+                    <option value="neetcard.html">NEET</option>
+                    <option value="gatecard.html">GATE</option>
+                    <option value="upsccard.html">UPSC</option>
+                    <option value="cuetcard.html">CUET</option>
+                </select>
+            </form>
+            <a href="aboutus.html">ABOUT US</a>
+            <a href="login.html">LOGIN/SIGNUP</a>
         </div>
     </div>
 
@@ -98,7 +108,7 @@
                         <li><strong>Union of Sets (A ∪ B):</strong> The union represents all elements in both sets.</li>
                         <li><strong>Intersection of Sets (A ∩ B):</strong> The intersection represents elements common to both sets.</li>
                     </ul>
-                    <img src="vennDiagram.webp"  class="notesImage" alt="Venn Diagram Example" class="diagram-img">
+                    <img src="images/vennDiagram.webp"  class="notesImage" alt="Venn Diagram Example" class="diagram-img">
                 </div>
 
                 <!-- Blood Relations Section -->
@@ -109,7 +119,7 @@
                         <li>Mother's Sister = Aunt</li>
                         <li>Grandfather = Father's Father</li>
                     </ul>
-                    <img src="bloodRel.jpeg" class="notesImage" alt="Blood Relation Example" class="diagram-img">
+                    <img src="images/bloodRel.jpeg" class="notesImage" alt="Blood Relation Example" class="diagram-img">
                 </div>
 
                 <!-- Seating Arrangement Section -->
@@ -119,7 +129,7 @@
                         <li><strong>Circular Seating Arrangement:</strong> A seating arrangement in a circle requires you to fix one person and arrange others relative to them.</li>
                         <li><strong>Linear Seating Arrangement:</strong> A linear arrangement where people are seated either facing towards or away from a reference point.</li>
                     </ul>
-                    <img src="SeatingArrangements.png" class="notesImage" alt="Seating Arrangement Example" class="diagram-img">
+                    <img src="images/SeatingArrangements.png" class="notesImage" alt="Seating Arrangement Example" class="diagram-img">
                 </div>
 
                 <!-- Clock Formula Section -->
@@ -128,7 +138,7 @@
                     <ul class="notes-list">
                         <li>Formula for the angle between hour and minute hands: <pre>Angle = |30*H - (11/2)*M|</pre></li>
                     </ul>
-                    <img src="clock.png" class="notesImage" alt="Clock Angle Example" class="diagram-img">
+                    <img src="images/clock.png" class="notesImage" alt="Clock Angle Example" class="diagram-img">
                 </div>
 
                 <!-- Direction Sense Section -->
@@ -138,7 +148,7 @@
                         <li><strong>Basic Directions:</strong> North, South, East, West.</li>
                         <li><strong>90-degree Turns:</strong> Turning right or left changes the direction by 90 degrees.</li>
                     </ul>
-                    <img src="Direction-Sense.png" class="notesImage" alt="Direction Sense Example" class="diagram-img">
+                    <img src="images/Direction-Sense.png" class="notesImage" alt="Direction Sense Example" class="diagram-img">
                 </div>
 
                 <!-- Tips and Tricks Section -->
@@ -241,7 +251,7 @@
     <!-- Footer Section -->
     <div class="footer">
         <div class="box1">
-            <img src="finall.png" alt="" class="ftimg1">
+            <img src="images/finall.png" alt="" class="ftimg1">
             <p>Plot No.34,35<br>Knowledge Park I,Greater Noida <br>Uttar Pradesh-201310</p>
         </div>
         <div class="box2">
@@ -252,7 +262,7 @@
             <img src="images/youtube.png" alt=""  class="ftimg">
             <img src="images/twitter.png" alt=""  class="ftimg">
             <br> <br>
-            <a href="" class="fta" title="Your Valuable Feedback is appreciated">Please Share Your Valuable Feedback Here</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfOpcU8cbbrYQye162CplfwUvbeWzXo95Num8Q_rK-m50QFCA/viewform?usp=sharing" class="fta" title="Your Valuable Feedback is appreciated">Please Share Your Valuable Feedback Here</a>
         </div>
         <div class="box3">
             <p>Contact Us|

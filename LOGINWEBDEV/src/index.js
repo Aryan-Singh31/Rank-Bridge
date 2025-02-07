@@ -1,10 +1,10 @@
 const express=require('express');
 const path =require('path');
 const bcrypt=require("bcrypt");
-const collection = require("./config");
+const { User, Application } = require("./config");
 const session = require("express-session");
 const app= express();
-
+const authMiddleware = require("./authMiddleware"); 
 // Session middleware
 app.use(
     session({
@@ -30,7 +30,7 @@ app.get("/cuetcard", (req, res) => {
 app.get("/cuetpyq", (req, res) => {
     res.render("cuetpyq", { user: req.session.user });
 });
-app.get("/main1", (req, res) => {
+app.get("/main1",authMiddleware, (req, res) => {
     res.render("main1", { user: req.session.user });
 });
 app.get("/cuettest", (req, res) => {
@@ -72,13 +72,13 @@ app.get("/jeecard", (req, res) => {
 app.get("/jeemaintext", (req, res) => {
     res.render("jeemaintext", { user: req.session.user });
 });
-app.get("/main", (req, res) => {
+app.get("/main",authMiddleware, (req, res) => {
     res.render("main", { user: req.session.user });
 });
-app.get("/main2", (req, res) => {
+app.get("/main2",authMiddleware, (req, res) => {
     res.render("main2", { user: req.session.user });
 });
-app.get("/mentor", (req, res) => {
+app.get("/mentor",authMiddleware, (req, res) => {
     res.render("mentor", { user: req.session.user });
 });
 app.get("/neet", (req, res) => {
@@ -111,6 +111,24 @@ app.get("/upscpyq", (req, res) => {
 app.get("/upsctext", (req, res) => {
     res.render("upsctext", { user: req.session.user });
 });
+app.get("/cuetnotes", (req, res) => {
+    res.render("cuetnotes", { user: req.session.user });
+});
+app.get("/gatenotes", (req, res) => {
+    res.render("gatenotes", { user: req.session.user });
+});
+app.get("/jeenotes", (req, res) => {
+    res.render("jeenotes", { user: req.session.user });
+});
+app.get("/neetnotes", (req, res) => {
+    res.render("neetnotes", { user: req.session.user });
+});
+app.get("/nimcetnotes", (req, res) => {
+    res.render("nimcetnotes", { user: req.session.user });
+});
+app.get("/upscnotes", (req, res) => {
+    res.render("upscnotes", { user: req.session.user });
+});
 app.get('/login', (req, res) => {
     res.render("login");
   })
@@ -124,7 +142,7 @@ app.post('/signup', async (req, res) => {
     email: req.body.email,
     password:req.body.password
     }
-    const existUser= await collection.findOne({email: data.email});
+    const existUser= await User.findOne({email: data.email});
     if(existUser){
         res.send("user already exists .please choose another email");
     }
@@ -132,11 +150,26 @@ app.post('/signup', async (req, res) => {
         const saltRounds=10;
         const hashedpassword= await bcrypt.hash(data.password,saltRounds);
         data.password=hashedpassword;
-        const userdata=await collection.insertMany(data);
+        const userdata=await User.insertMany(data);
         console.log(userdata);
     }
 
   })
+  app.post("/apply", async (req, res) => {
+    try {
+        const { name, email, message } = req.body; // Get form data
+
+        // Save the application details in MongoDB
+        const newApplication = new Application({ name, email, message });
+        await newApplication.save();
+
+        res.send("Application submitted successfully!"); // Send success message
+    } catch (error) {
+        console.log(error);
+        res.status(500).send("Error submitting application");
+    }
+});
+
   app.get('/logout', (req, res) => {
     req.session.destroy(err => {
         if (err) {
@@ -148,7 +181,7 @@ app.post('/signup', async (req, res) => {
 
   app.post('/login', async (req, res) => {
     try {
-        const check = await collection.findOne({ email: req.body.email });
+        const check = await User.findOne({ email: req.body.email });
         if (!check) {
             return res.send("User not found");
         }

@@ -3,7 +3,6 @@
     margin: 0;
     box-sizing: border-box;
 }
-
 .nav {
     border: 2px solid black;
     height: 140px;
@@ -27,6 +26,16 @@
     font-size: 1.2rem;
     margin: 0 15px;
     transition: color 0.3s;
+}
+.navlinks {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.navlinks a, 
+.navlinks form {
+    display: inline-block;
 }
 
 .searchcontainer {

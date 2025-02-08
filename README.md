@@ -1,8 +1,5 @@
 # RankBridge - Smart Learning Platform 
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yourusername/RankBridge/blob/main/LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/yourusername/RankBridge/pulls)
-
 RankBridge is an innovative learning platform designed to streamline exam preparation by providing curated educational resources, smart study tools, and personalized learning paths for competitive exam aspirants.
 
 ## Key Features ✨
@@ -26,24 +23,15 @@ RankBridge is an innovative learning platform designed to streamline exam prepar
 - **📊 Assessment System**  
   - Free mock test series with instant results
   - Knowledge checkpoints with detailed analytics
-  - Progress tracking dashboard
 
 - **⏱️ Time Optimization**  
   Eliminates content searching time through:
   - Pre-verified quality resources
   - Smart topic recommendations
-  - Optimized study roadmaps
 
 ## Tech Stack 💻
 
-- **Frontend**: React.js, Tailwind CSS
+- **Frontend**: React.js, Tailwind CSS,template ejs.
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB
 - **Authentication**: JWT, Bcrypt
-- **Video Integration**: YouTube API
-
-## Installation 🛠️
-
-1. Clone the repository
-```bash
-git clone https://github.com/yourusername/RankBridge.git

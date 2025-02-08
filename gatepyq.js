@@ -18,9 +18,9 @@ const pyqSubjects = {
         { year: 2024, link: "PDF/gateme2024.pdf" }
     ],
     Agriculture: [
-        { year: 2024, link: "20PDF/gateagri2024.pdf" },
-        { year: 2023, link: "20PDF/gateagri2022.pdf" },
-        { year: 2023, link: "20PDF/gateagri2024.pdf" }
+        { year: 2024, link: "PDF/gateagri2024.pdf" },
+        { year: 2023, link: "PDF/gateagri2022.pdf" },
+        { year: 2023, link: "PDF/gateagri2024.pdf" }
     ],
     "Electrical": [
         { year: 2024, link: "PDF/gatega2023.pdf" },

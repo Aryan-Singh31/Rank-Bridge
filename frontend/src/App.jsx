@@ -11,6 +11,15 @@ import GateCard from "./pages/GateCard";
 import CuetCard from "./pages/CuetCard";
 import UpscCard from "./pages/UpscCard";
 
+// === notes import ====
+import NotesHome from "./pages/NotesHome";  
+import CuetNotes from "./pages/CuetNotes";
+ import JeeNotes from "./pages/JeeNotes";
+ import NeetNotes from "./pages/NeetNotes";
+ import GateNotes from "./pages/GateNotes";
+import UpscNotes from "./pages/UpscNotes";
+import NimcetNotes from "./pages/NimcetNotes";
+
 
 
 
@@ -30,6 +39,18 @@ function App() {
 <Route path="/gatecard" element={<GateCard />} />
 <Route path="/cuetcard" element={<CuetCard />} />
 <Route path="/upsccard" element={<UpscCard />} />
+
+
+<Route path="/notes" element={<NotesHome />} />
+
+<Route path="/notes/cuet" element={<CuetNotes />} />
+<Route path="/notes/gate" element={<GateNotes />} />
+<Route path="/notes/jee" element={<JeeNotes />} />
+<Route path="/notes/neet" element={<NeetNotes />} />
+<Route path="/notes/nimcet" element={<NimcetNotes />} />
+<Route path="/notes/upsc" element={<UpscNotes />} />
+
+
      </Routes>
     </>
   )

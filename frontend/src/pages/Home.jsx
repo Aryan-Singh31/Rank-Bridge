@@ -23,7 +23,7 @@ const Home = ({ user }) => {
     <div className="w-full overflow-x-hidden">
 
       {/* ================= NAVBAR ================= */}
-     <Navbar user={user}/>
+      <Navbar user={user} />
 
       {/* ================= HERO ================= */}
       <motion.div
@@ -47,48 +47,48 @@ const Home = ({ user }) => {
       </motion.div>
 
       {/* ================= COURSES ================= */}
-     <section className="p-10">
-  <h2 className="text-3xl font-bold mb-8 text-center">
-    Popular Courses
-  </h2>
+      <section className="p-10">
+        <h2 className="text-3xl font-bold mb-8 text-center">
+          Popular Courses
+        </h2>
 
-  <motion.div
-    variants={container}
-    initial="hidden"
-    whileInView="show"
-    viewport={{ once: true }}
-    className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10"
-  >
-    {[
-      { title: "NIMCET", img: "/images/nimcet.jpeg", link: "/nimcetcard" },
-      { title: "JEE", img: "/images/jee-main-2025.webp", link: "/jeecard" },
-      { title: "NEET", img: "/images/neet.jpg", link: "/neetcard" },
-      { title: "GATE", img: "/images/gateimg.jpg", link: "/gatecard" },
-      { title: "CUET", img: "/images/cuet.webp", link: "/cuetcard" },
-      { title: "UPSC", img: "/images/upsc.jpg", link: "/upsccard" },
-    ].map((course, i) => (
-      <Link key={i} to={course.link}>
         <motion.div
-          variants={item}
-          whileHover={{ scale: 1.05 }}
-          className="bg-white shadow-lg rounded-xl overflow-hidden cursor-pointer"
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10"
         >
-          <img
-            src={course.img}
-            className="h-48 w-full object-cover"
-            alt={course.title}
-          />
-          <div className="p-5 text-center">
-            <h3 className="text-xl font-bold">{course.title}</h3>
-            <p className="text-gray-600 mt-2">
-              Complete preparation with tests, notes & mentorship
-            </p>
-          </div>
+          {[
+            { title: "NIMCET", img: "/images/nimcet.jpeg", link: "/nimcetcard" },
+            { title: "JEE", img: "/images/jee-main-2025.webp", link: "/jeecard" },
+            { title: "NEET", img: "/images/neet.jpg", link: "/neetcard" },
+            { title: "GATE", img: "/images/gateimg.jpg", link: "/gatecard" },
+            { title: "CUET", img: "/images/cuet.webp", link: "/cuetcard" },
+            { title: "UPSC", img: "/images/upsc.jpg", link: "/upsccard" },
+          ].map((course, i) => (
+            <Link key={i} to={course.link}>
+              <motion.div
+                variants={item}
+                whileHover={{ scale: 1.05 }}
+                className="bg-white shadow-lg rounded-xl overflow-hidden cursor-pointer"
+              >
+                <img
+                  src={course.img}
+                  className="h-48 w-full object-cover"
+                  alt={course.title}
+                />
+                <div className="p-5 text-center">
+                  <h3 className="text-xl font-bold">{course.title}</h3>
+                  <p className="text-gray-600 mt-2">
+                    Complete preparation with tests, notes & mentorship
+                  </p>
+                </div>
+              </motion.div>
+            </Link>
+          ))}
         </motion.div>
-      </Link>
-    ))}
-  </motion.div>
-</section>
+      </section>
 
 
       {/* ================= FEATURES ================= */}
@@ -108,18 +108,28 @@ const Home = ({ user }) => {
             { icon: BookOpen, title: "Test Series" },
             { icon: Users, title: "Expert Mentors" },
             { icon: FileText, title: "PYQs" },
-            { icon: Brain, title: "Smart Notes" },
-          ].map((f, i) => (
-            <motion.div
-              key={i}
-              variants={item}
-              whileHover={{ y: -8 }}
-              className="bg-white p-6 rounded-xl shadow-md text-center"
-            >
-              <f.icon size={40} className="mx-auto text-blue-600 mb-4" />
-              <h3 className="font-bold text-lg">{f.title}</h3>
-            </motion.div>
-          ))}
+            { icon: Brain, title: "Smart Notes", link: "/notes" },
+          ].map((f, i) => {
+            const Card = (
+              <motion.div
+                variants={item}
+                whileHover={{ y: -8 }}
+                className="bg-white p-6 rounded-xl shadow-md text-center cursor-pointer"
+              >
+                <f.icon size={40} className="mx-auto text-blue-600 mb-4" />
+                <h3 className="font-bold text-lg">{f.title}</h3>
+              </motion.div>
+            );
+
+            return f.link ? (
+              <Link key={i} to={f.link}>
+                {Card}
+              </Link>
+            ) : (
+              <div key={i}>{Card}</div>
+            );
+          })}
+
         </motion.div>
       </section>
 
@@ -136,9 +146,9 @@ const Home = ({ user }) => {
           className="w-64 h-64 rounded-xl shadow-xl"
         />
       </section>
-     
 
-       <Footer />
+
+      <Footer />
     </div>
   );
 };

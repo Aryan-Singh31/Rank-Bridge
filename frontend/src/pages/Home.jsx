@@ -1,14 +1,8 @@
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import {
-  Search,
-  BookOpen,
-  GraduationCap,
-  Brain,
-  FileText,
-  Users,
-} from "lucide-react";
+import Footer from "../components/Footer";
+import { BookOpen, Brain, FileText, Users } from "lucide-react";
 import Navbar from "../components/Navbar";
+
 
 const container = {
   hidden: { opacity: 0 },
@@ -138,29 +132,9 @@ const Home = ({ user }) => {
           className="w-64 h-64 rounded-xl shadow-xl"
         />
       </section>
+     
 
-      {/* ================= FOOTER ================= */}
-      <footer className="bg-gray-900 text-gray-300 px-10 py-8 flex flex-col md:flex-row gap-8">
-        <div className="md:w-1/3">
-          <img src="/images/finall.png" className="w-40 mb-4" />
-          <p>Greater Noida, Uttar Pradesh</p>
-        </div>
-
-        <div className="md:w-1/3 text-center">
-          <h4 className="font-bold text-white mb-4">STAY CONNECTED</h4>
-          <div className="flex justify-center gap-5">
-            <img src="/images/instagrame.png" className="w-6" />
-            <img src="/images/facebook.png" className="w-6" />
-            <img src="/images/youtube.png" className="w-6" />
-            <img src="/images/twitter.png" className="w-6" />
-          </div>
-        </div>
-
-        <div className="md:w-1/3 text-sm">
-          © 2022 Rank Bridge <br />
-          All Rights Reserved
-        </div>
-      </footer>
+       <Footer />
     </div>
   );
 };

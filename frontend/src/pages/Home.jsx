@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Footer from "../components/Footer";
 import { BookOpen, Brain, FileText, Users } from "lucide-react";
 import Navbar from "../components/Navbar";
+import { Link } from "react-router-dom";
 
 
 const container = {
@@ -46,46 +47,49 @@ const Home = ({ user }) => {
       </motion.div>
 
       {/* ================= COURSES ================= */}
-      <section className="p-10">
-        <h2 className="text-3xl font-bold mb-8 text-center">
-          Popular Courses
-        </h2>
+     <section className="p-10">
+  <h2 className="text-3xl font-bold mb-8 text-center">
+    Popular Courses
+  </h2>
 
+  <motion.div
+    variants={container}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true }}
+    className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10"
+  >
+    {[
+      { title: "NIMCET", img: "/images/nimcet.jpeg", link: "/nimcetcard" },
+      { title: "JEE", img: "/images/jee-main-2025.webp", link: "/jeecard" },
+      { title: "NEET", img: "/images/neet.jpg", link: "/neetcard" },
+      { title: "GATE", img: "/images/gateimg.jpg", link: "/gatecard" },
+      { title: "CUET", img: "/images/cuet.webp", link: "/cuetcard" },
+      { title: "UPSC", img: "/images/upsc.jpg", link: "/upsccard" },
+    ].map((course, i) => (
+      <Link key={i} to={course.link}>
         <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10"
+          variants={item}
+          whileHover={{ scale: 1.05 }}
+          className="bg-white shadow-lg rounded-xl overflow-hidden cursor-pointer"
         >
-          {[
-            { title: "NIMCET", img: "/images/nimcet.jpeg" },
-            { title: "JEE", img: "/images/jee-main-2025.webp" },
-            { title: "NEET", img: "/images/neet.jpg" },
-            { title: "GATE", img: "/images/gateimg.jpg" },
-            { title: "CUET", img: "/images/cuet.webp" },
-            { title: "UPSC", img: "/images/upsc.jpg" },
-          ].map((course, i) => (
-            <motion.div
-              key={i}
-              variants={item}
-              whileHover={{ scale: 1.05 }}
-              className="bg-white shadow-lg rounded-xl overflow-hidden cursor-pointer"
-            >
-              <img
-                src={course.img}
-                className="h-48 w-full object-cover"
-              />
-              <div className="p-5 text-center">
-                <h3 className="text-xl font-bold">{course.title}</h3>
-                <p className="text-gray-600 mt-2">
-                  Complete preparation with tests, notes & mentorship
-                </p>
-              </div>
-            </motion.div>
-          ))}
+          <img
+            src={course.img}
+            className="h-48 w-full object-cover"
+            alt={course.title}
+          />
+          <div className="p-5 text-center">
+            <h3 className="text-xl font-bold">{course.title}</h3>
+            <p className="text-gray-600 mt-2">
+              Complete preparation with tests, notes & mentorship
+            </p>
+          </div>
         </motion.div>
-      </section>
+      </Link>
+    ))}
+  </motion.div>
+</section>
+
 
       {/* ================= FEATURES ================= */}
       <section className="bg-slate-50 py-12">

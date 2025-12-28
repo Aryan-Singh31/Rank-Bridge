@@ -105,9 +105,9 @@ const Home = ({ user }) => {
           className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 px-10"
         >
           {[
-            { icon: BookOpen, title: "Test Series" },
-            { icon: Users, title: "Expert Mentors" },
-            { icon: FileText, title: "PYQs" },
+            { icon: BookOpen, title: "Test Series", link: "/test-series" },
+            { icon: Users, title: "Expert Mentors", link: "/mentors" },
+            { icon: FileText, title: "PYQs", link: "/pyqs" },
             { icon: Brain, title: "Smart Notes", link: "/notes" },
           ].map((f, i) => {
             const Card = (

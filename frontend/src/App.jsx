@@ -3,6 +3,8 @@ import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import VerifyEmail from "./pages/verifyEmail";
+import Navbar from "./components/Navbar";
 
 // ===== Course Pages =====
 import NimcetCard from "./pages/NimcetCard";
@@ -34,10 +36,12 @@ import UpscPYQs from "./pages/UpscPYQs";
 import TestHome from "./pages/TestHome";
 import UpscTestPage from "./pages/UpscTestPage";
 import NimcetTestPage from "./pages/NimcetTestPage";
- import JeeTestPage from "./pages/JeeTestPage";
- import NeetTestPage from "./pages/NeetTestPage";
+import JeeTestPage from "./pages/JeeTestPage";
+import NeetTestPage from "./pages/NeetTestPage";
 import GateTestPage from "./pages/GateTestPage";
 import CuetTestPage from "./pages/CuetTestPage";
+import Mentor from "./pages/Mentor";
+
 
 /* =====GENERAL INSTRUCTIONS FOR TEST SERIES ===== */
 import CuetGeneralInstruction from "./pages/CuetGeneralInstruction";
@@ -46,12 +50,16 @@ import UpscGeneralInstruction from "./pages/UpscGeneralInstruction";
 import NeetGeneralInstruction from "./pages/NeetGeneralInstruction";
 import NimcetGeneralInstruction from "./pages/NimcetGeneralInstruction";
 import JeeGeneralInstruction from "./pages/JeeGeneralInstruction";
+import Register from "./pages/Register";
 
 
 function App() {
   return (
+    <>
+    <Navbar /> 
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/home" element={<Home />} />
       <Route path="/aboutus" element={<AboutUs />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
@@ -82,7 +90,7 @@ function App() {
       <Route path="/pyqs/gate" element={<GatePYQs />} />
       <Route path="/pyqs/upsc" element={<UpscPYQs />} />
 
-       {/* ===== TEST SERIES ===== */}
+      {/* ===== TEST SERIES ===== */}
       <Route path="/test-series" element={<TestHome />} />
       <Route path="/test-series/upsc" element={<UpscTestPage />} />
       <Route path="/test-series/nimcet" element={<NimcetTestPage />} />
@@ -91,53 +99,62 @@ function App() {
       <Route path="/test-series/gate" element={<GateTestPage />} />
       <Route path="/test-series/neet" element={<NeetTestPage />} />
 
-         {/* ===== MOCK TEST SERIES ===== */}
-      <Route path="/tests/cuet/instructions" element={<CuetGeneralInstruction />}/>
-       <Route path="/tests/cuet/mock/:id" element={ <div className="p-10 text-center text-xl"> CUET Mock Test Coming Soon</div>}/>
+      {/* ===== MOCK TEST SERIES ===== */}
+      <Route path="/tests/cuet/instructions" element={<CuetGeneralInstruction />} />
+      <Route path="/tests/cuet/mock/:id" element={<div className="p-10 text-center text-xl"> CUET Mock Test Coming Soon</div>} />
 
-       <Route path="/tests/gate/instructions" element={<GateGeneralInstruction />} />
-       <Route
-  path="/tests/gate/mock/:id"
-  element={<div className="p-10 text-center text-xl">GATE Mock Test Coming Soon</div>}
-/>
+      <Route path="/tests/gate/instructions" element={<GateGeneralInstruction />} />
+      <Route
+        path="/tests/gate/mock/:id"
+        element={<div className="p-10 text-center text-xl">GATE Mock Test Coming Soon</div>}
+      />
 
-<Route path="/tests/jee/instructions" element={<JeeGeneralInstruction />} />
-<Route
-  path="/tests/jee/mock/:id"
-  element={<div className="p-10 text-center text-xl">JEE Mock Test Coming Soon</div>}
-/>
+      <Route path="/tests/jee/instructions" element={<JeeGeneralInstruction />} />
+      <Route
+        path="/tests/jee/mock/:id"
+        element={<div className="p-10 text-center text-xl">JEE Mock Test Coming Soon</div>}
+      />
 
-<Route path="/tests/neet/instructions" element={<NeetGeneralInstruction />} />
-<Route
-  path="/tests/neet/mock/:id"
-  element={<div className="p-10 text-center text-xl">NEET Mock Test Coming Soon</div>}
-/>
-
-
-<Route path="/tests/nimcet/instructions" element={<NimcetGeneralInstruction />} />
-
-<Route
-  path="/tests/nimcet/mock/:id"
-  element={
-    <div className="p-10 text-center text-xl">
-      NIMCET Mock Test Coming Soon
-    </div>
-  }
-/>
+      <Route path="/tests/neet/instructions" element={<NeetGeneralInstruction />} />
+      <Route
+        path="/tests/neet/mock/:id"
+        element={<div className="p-10 text-center text-xl">NEET Mock Test Coming Soon</div>}
+      />
 
 
-<Route path="/tests/upsc/instructions" element={<UpscGeneralInstruction />} />
+      <Route path="/tests/nimcet/instructions" element={<NimcetGeneralInstruction />} />
 
-<Route
-  path="/tests/upsc/mock/:id"
-  element={
-    <div className="p-10 text-center text-xl">
-      UPSC Mock Test Coming Soon
-    </div>
-  }
-/>
+      <Route
+        path="/tests/nimcet/mock/:id"
+        element={
+          <div className="p-10 text-center text-xl">
+            NIMCET Mock Test Coming Soon
+          </div>
+        }
+      />
+
+
+      <Route path="/tests/upsc/instructions" element={<UpscGeneralInstruction />} />
+
+      <Route
+        path="/tests/upsc/mock/:id"
+        element={
+          <div className="p-10 text-center text-xl">
+            UPSC Mock Test Coming Soon
+          </div>
+        }
+      />
+
+      <Route path="/mentors" element={<Mentor />} />
+
+      {/* LOGIN AND SIGN UP ROUtes */}
+  <Route path = "/register"  element = {<Register/>} />
+  <Route path = "/verify-email"  element = {<VerifyEmail/>} />
+      <Route path = "/login"  element = {<Login/>} />
+
 
     </Routes>
+    </>
   );
 }
 

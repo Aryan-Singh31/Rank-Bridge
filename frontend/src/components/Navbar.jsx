@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, Menu, X, User } from "lucide-react";
 import { useState } from "react";
+import { useAuth } from "../context/AuthProvider";
 
-const Navbar = ({ user }) => {
+const Navbar = () => {
+  const { user, logout } = useAuth();
   const [open, setOpen] = useState(false);
 
   return (
@@ -47,19 +49,29 @@ const Navbar = ({ user }) => {
             About
           </Link>
 
-          {user ? (
-            <div className="flex items-center gap-2 text-blue-600">
-              <User size={18} />
-              <span>{user.name}</span>
-            </div>
-          ) : (
-            <Link
-              to="/login"
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
-            >
-              Login
-            </Link>
-          )}
+         {user ? (
+  <div className="flex items-center gap-4">
+    <div className="flex items-center gap-2 text-blue-600">
+      <User size={18} />
+      <span>{user.name}</span>
+    </div>
+
+    <button
+      onClick={logout}
+      className="text-red-600 hover:text-red-700 font-semibold"
+    >
+      Logout
+    </button>
+  </div>
+) : (
+  <Link
+    to="/login"
+    className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+  >
+    Login
+  </Link>
+)}
+
         </div>
 
         {/* ===== Mobile Menu Button ===== */}
@@ -101,19 +113,31 @@ const Navbar = ({ user }) => {
                 </button>
               </div>
 
-              {user ? (
-                <span className="text-blue-600">
-                  Hello, {user.name}
-                </span>
-              ) : (
-                <Link
-                  to="/login"
-                  onClick={() => setOpen(false)}
-                  className="bg-blue-600 text-white px-4 py-2 rounded-lg text-center"
-                >
-                  Login
-                </Link>
-              )}
+             {user ? (
+  <>
+    <span className="text-blue-600">
+      Hello, {user.name}
+    </span>
+    <button
+      onClick={() => {
+        logout();
+        setOpen(false);
+      }}
+      className="text-red-600 font-semibold"
+    >
+      Logout
+    </button>
+  </>
+) : (
+  <Link
+    to="/login"
+    onClick={() => setOpen(false)}
+    className="bg-blue-600 text-white px-4 py-2 rounded-lg text-center"
+  >
+    Login
+  </Link>
+)}
+
             </div>
           </motion.div>
         )}

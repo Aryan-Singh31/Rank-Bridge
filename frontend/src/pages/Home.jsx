@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
 import Footer from "../components/Footer";
 import { BookOpen, Brain, FileText, Users } from "lucide-react";
-import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
 
-
+/* ===== animation configs ===== */
 const container = {
   hidden: { opacity: 0 },
   show: {
@@ -18,12 +17,9 @@ const item = {
   show: { opacity: 1, y: 0 },
 };
 
-const Home = ({ user }) => {
+const Home = () => {
   return (
     <div className="w-full overflow-x-hidden">
-
-      {/* ================= NAVBAR ================= */}
-      <Navbar user={user} />
 
       {/* ================= HERO ================= */}
       <motion.div
@@ -35,6 +31,7 @@ const Home = ({ user }) => {
         <img
           src="/images/study.jpg"
           className="w-full h-[380px] object-cover"
+          alt="hero"
         />
         <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -90,7 +87,6 @@ const Home = ({ user }) => {
         </motion.div>
       </section>
 
-
       {/* ================= FEATURES ================= */}
       <section className="bg-slate-50 py-12">
         <h2 className="text-3xl font-bold text-center mb-10">
@@ -121,32 +117,14 @@ const Home = ({ user }) => {
               </motion.div>
             );
 
-            return f.link ? (
+            return (
               <Link key={i} to={f.link}>
                 {Card}
               </Link>
-            ) : (
-              <div key={i}>{Card}</div>
             );
           })}
-
         </motion.div>
       </section>
-
-      {/* ================= QUOTE ================= */}
-      <section className="flex flex-col md:flex-row items-center justify-center gap-10 py-12">
-        <motion.img
-          whileHover={{ scale: 1.05 }}
-          src="/images/nelsonimg.jpg"
-          className="w-64 h-64 rounded-full shadow-xl"
-        />
-        <motion.img
-          whileHover={{ scale: 1.05 }}
-          src="/images/nelson quote.webp"
-          className="w-64 h-64 rounded-xl shadow-xl"
-        />
-      </section>
-
 
       <Footer />
     </div>

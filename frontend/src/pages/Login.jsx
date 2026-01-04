@@ -1,88 +1,173 @@
-import { motion } from "framer-motion";
-import { User, Mail, Lock } from "lucide-react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { useAuth } from "../context/AuthProvider";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const Login = () => {
-  return (
-    <div
-      className="min-h-screen w-full flex items-center justify-center bg-cover bg-center px-4"
-      style={{ backgroundImage: "url('/images/back.jpeg')" }}
+  const [identifier, setIdentifier] = useState("");
+  const [password, setPassword] = useState("");
+
+  const { login } = useAuth();
+  const navigate = useNavigate();
+
+  // Redirect if already logged in
+  useEffect(() => {
+    const savedUser = localStorage.getItem("user");
+    if (savedUser) navigate("/home");
+  }, [navigate]);
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    const loadingToast = toast.loading("Logging you in...");
+
+    try {
+      const res = await axios.post("http://localhost:5000/api/auth/login", {
+        identifier,
+        password,
+      });
+
+login(res.data.user, res.data.token); 
+navigate("/home");
+
+      const { user, token } = res.data || {};
+      if (!user || !token) {
+        throw new Error("Invalid login response from server");
+      }
+
+      // Save user + token
+      const userData = {
+        id: user._id,
+        name: user.name,
+        username: user.username,
+        email: user.email,
+        token,
+      };
+
+      localStorage.setItem("token", token);
+      localStorage.setItem("user", JSON.stringify(userData));
+
+      // Update context
+     login(user, token);
+
+      // Axios auth header
+      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+
+      toast.success("Login successful 🎉", { id: loadingToast });
+
+      navigate("/home");
+    } catch (err) {
+      console.error("Login error:", err.response?.data || err.message);
+
+      toast.error(
+        err.response?.data?.message || "Login failed. Please try again.",
+        { id: loadingToast }
+      );
+    }
+  };
+
+ return (
+  <div className="relative min-h-screen flex items-center justify-center bg-slate-100 px-4 overflow-hidden">
+    
+    {/* Subtle gradient blobs */}
+    <div className="absolute -top-32 -left-32 w-96 h-96 bg-indigo-200 rounded-full blur-3xl opacity-40"></div>
+    <div className="absolute top-1/3 -right-32 w-96 h-96 bg-blue-200 rounded-full blur-3xl opacity-30"></div>
+
+    {/* SVG dot pattern */}
+    <svg
+      className="absolute inset-0 w-full h-full opacity-[0.03]"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      {/* ===== Card ===== */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="w-full max-w-md bg-white rounded-2xl shadow-2xl px-8 py-10"
-      >
-        {/* ===== Heading ===== */}
-        <h1 className="text-3xl font-bold text-center text-purple-700 mb-10 relative">
-          Sign In
-          <span className="block w-10 h-1 bg-purple-700 mx-auto mt-3 rounded"></span>
+      <defs>
+        <pattern
+          id="dots"
+          x="0"
+          y="0"
+          width="20"
+          height="20"
+          patternUnits="userSpaceOnUse"
+        >
+          <circle cx="1" cy="1" r="1" fill="#1e293b" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#dots)" />
+    </svg>
+
+    {/* Login Card */}
+    <div className="relative z-10 max-w-md w-full bg-white rounded-2xl shadow-xl border border-slate-200 p-8">
+      
+      {/* Title */}
+      <div className="flex flex-col items-center mb-6">
+        <h1 className="text-3xl font-bold text-indigo-700 tracking-wide">
+          Rank Bridge
         </h1>
-
-        {/* ===== Form (LOGIC SAME) ===== */}
-        <form action="/login" method="POST" className="space-y-5">
-
-          {/* Name */}
-          <div className="flex items-center bg-gray-100 rounded-md px-3">
-            <User className="text-gray-500" size={20} />
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              className="w-full bg-transparent outline-none px-3 py-4"
-            />
-          </div>
-
-          {/* Email */}
-          <div className="flex items-center bg-gray-100 rounded-md px-3">
-            <Mail className="text-gray-500" size={20} />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              required
-              className="w-full bg-transparent outline-none px-3 py-4"
-            />
-          </div>
-
-          {/* Password */}
-          <div className="flex items-center bg-gray-100 rounded-md px-3">
-            <Lock className="text-gray-500" size={20} />
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              required
-              className="w-full bg-transparent outline-none px-3 py-4"
-            />
-          </div>
-
-          {/* Button */}
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            type="submit"
-            className="w-full bg-purple-700 text-white py-3 rounded-full font-semibold hover:bg-purple-800 transition"
-          >
-            Sign In
-          </motion.button>
-        </form>
-
-        {/* ===== Footer Text ===== */}
-        <p className="text-sm text-center mt-6">
-          Don’t have an account?{" "}
-          <Link
-            to="/signup"
-            className="text-purple-700 font-semibold hover:underline"
-          >
-            Signup
-          </Link>
+        <p className="text-sm text-slate-500 mt-1">
+          Bridge the gap between effort & rank
         </p>
-      </motion.div>
+      </div>
+
+      <h2 className="text-center text-xl font-semibold text-slate-700 mb-6">
+        Student Login
+      </h2>
+
+      {/* Form */}
+      <form onSubmit={handleLogin} className="space-y-4">
+        <div>
+          <label className="block text-sm font-medium text-slate-600 mb-1">
+            Email or Username
+          </label>
+          <input
+            type="text"
+            className="w-full px-4 py-2 rounded-lg border border-slate-300
+                       focus:outline-none focus:ring-2 focus:ring-indigo-500
+                       focus:border-indigo-500 text-slate-700"
+            placeholder="Enter email or username"
+            value={identifier}
+            onChange={(e) => setIdentifier(e.target.value)}
+            required
+          />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-slate-600 mb-1">
+            Password
+          </label>
+          <input
+            type="password"
+            className="w-full px-4 py-2 rounded-lg border border-slate-300
+                       focus:outline-none focus:ring-2 focus:ring-indigo-500
+                       focus:border-indigo-500 text-slate-700"
+            placeholder="Enter your password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+        </div>
+
+        <button
+          type="submit"
+          className="w-full bg-indigo-600 text-white py-2.5 rounded-lg
+                     font-semibold tracking-wide shadow-md
+                     hover:bg-indigo-700 transition-colors duration-200"
+        >
+          Login
+        </button>
+      </form>
+
+      {/* Footer */}
+      <p className="mt-6 text-center text-sm text-slate-600">
+        Don’t have an account?{" "}
+        <span
+          onClick={() => navigate("/register")}
+          className="text-indigo-600 font-medium hover:underline cursor-pointer"
+        >
+          Register
+        </span>
+      </p>
     </div>
-  );
+  </div>
+);
 };
 
-export default Login;
+export default Login;  

@@ -34,6 +34,11 @@ const userSchema = new mongoose.Schema(
       minlength: [6, "Password must be at least 6 characters long"],
       select: false, // hide password in queries by default
     },
+    role: {
+      type: String,
+      enum: ["student", "admin"],
+      default: "student",
+    },
     dob: {
       type: Date,
       required: [true, "Date of birth is required"],

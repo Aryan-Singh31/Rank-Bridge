@@ -12,60 +12,64 @@ const Login = () => {
   const navigate = useNavigate();
 
   // Redirect if already logged in
-  useEffect(() => {
-    const savedUser = localStorage.getItem("user");
-    if (savedUser) navigate("/home");
-  }, [navigate]);
-
-  const handleLogin = async (e) => {
-    e.preventDefault();
-
-    const loadingToast = toast.loading("Logging you in...");
-
-    try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", {
-        identifier,
-        password,
-      });
-
-login(res.data.user, res.data.token); 
-navigate("/home");
-
-      const { user, token } = res.data || {};
-      if (!user || !token) {
-        throw new Error("Invalid login response from server");
-      }
-
-      // Save user + token
-      const userData = {
-        id: user._id,
-        name: user.name,
-        username: user.username,
-        email: user.email,
-        token,
-      };
-
-      localStorage.setItem("token", token);
-      localStorage.setItem("user", JSON.stringify(userData));
-
-      // Update context
-     login(user, token);
-
-      // Axios auth header
-      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-
-      toast.success("Login successful 🎉", { id: loadingToast });
-
+ useEffect(() => {
+  const savedUser = localStorage.getItem("user");
+  if (savedUser) {
+    const user = JSON.parse(savedUser);
+    if (user.role === "admin") {
+      navigate("/admin");
+    } else {
       navigate("/home");
-    } catch (err) {
-      console.error("Login error:", err.response?.data || err.message);
-
-      toast.error(
-        err.response?.data?.message || "Login failed. Please try again.",
-        { id: loadingToast }
-      );
     }
-  };
+  }
+}, [navigate]);
+
+
+ const handleLogin = async (e) => {
+  e.preventDefault();
+  const loadingToast = toast.loading("Logging you in...");
+
+  try {
+    const res = await axios.post("http://localhost:5000/api/auth/login", {
+      identifier,
+      password,
+    });
+
+    const { user, token } = res.data;
+
+    if (!user || !token) {
+      throw new Error("Invalid login response");
+    }
+
+    // ✅ SAVE USER WITH ROLE (VERY IMPORTANT)
+    localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("token", token);
+
+    // ✅ UPDATE CONTEXT (ONCE)
+    login(user, token);
+
+    // ✅ SET AXIOS HEADER
+    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+
+    toast.success("Login successful 🎉", { id: loadingToast });
+
+    // ✅ REDIRECT BASED ON ROLE (OPTIONAL BUT NICE)
+    if (user.role === "admin") {
+      navigate("/admin");
+    } else {
+      navigate("/home");
+    }
+
+  } catch (err) {
+    console.error("Login error:", err.response?.data || err.message);
+
+    toast.error(
+      err.response?.data?.message || "Login failed. Please try again.",
+      { id: loadingToast }
+    );
+  }
+};
+
 
  return (
   <div className="relative min-h-screen flex items-center justify-center bg-slate-100 px-4 overflow-hidden">

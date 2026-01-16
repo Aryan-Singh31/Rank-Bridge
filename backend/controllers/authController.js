@@ -10,8 +10,8 @@ import multer from "multer";
 // ======================= HELPERS =======================
 
 // Generate JWT Token
-const generateToken = (id) =>
-  jwt.sign({ id }, process.env.JWT_SECRET, { expiresIn: "7d" });
+const generateToken = (id, role) =>
+  jwt.sign({ id, role }, process.env.JWT_SECRET, { expiresIn: "7d" });
 
 // Generate 6-digit OTP
 const generateOTP = () =>
@@ -218,8 +218,10 @@ export const loginUser = async (req, res) => {
     const isMatch = await user.matchPassword(password);
     if (!isMatch)
       return res.status(401).json({ message: "Invalid email or password" });
+       
+      const role = user.role || "student";
 
-    const token = generateToken(user._id);
+    const token = generateToken(user._id, role);
 
     return res.json({
       message: "Login successful",
@@ -230,6 +232,7 @@ export const loginUser = async (req, res) => {
         email: user.email,
         dob: user.dob,
         profileImage: user.profileImage,
+         role: role,
       },
       token,
     });
@@ -268,6 +271,16 @@ export const resendOTP = async (req, res) => {
     console.error("Resend OTP error:", error);
     return res.status(500).json({ message: "Server Error" });
   }
+};
+
+export const getMe = (req, res) => {
+  res.json({
+    _id: req.user._id,
+    name: req.user.name,
+    email: req.user.email,
+    username: req.user.username,
+    role: req.user.role,
+  });
 };
 
 // ======================= MULTER CONFIG =======================

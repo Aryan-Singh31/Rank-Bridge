@@ -41,38 +41,60 @@ const Navbar = () => {
         </div>
 
         {/* ===== Desktop Links ===== */}
-        <div className="hidden lg:flex items-center gap-6 font-semibold">
-          <Link className="hover:text-blue-600 transition" to="/">
-            Home
-          </Link>
-          <Link className="hover:text-blue-600 transition" to="/aboutus">
-            About
-          </Link>
-
-         {user ? (
-  <div className="flex items-center gap-4">
-    <div className="flex items-center gap-2 text-blue-600">
-      <User size={18} />
-      <span>{user.name}</span>
-    </div>
-
-    <button
-      onClick={logout}
-      className="text-red-600 hover:text-red-700 font-semibold"
-    >
-      Logout
-    </button>
-  </div>
-) : (
-  <Link
-    to="/login"
-    className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
-  >
-    Login
+       <div className="hidden lg:flex items-center gap-6 font-semibold">
+  <Link className="hover:text-blue-600 transition" to="/">
+    Home
   </Link>
-)}
+  <Link className="hover:text-blue-600 transition" to="/aboutus">
+    About
+  </Link>
 
-        </div>
+  {/* ===== ROLE BASED LINKS ===== */}
+  {user?.role !== "admin" && (
+    <>
+      <Link className="hover:text-blue-600" to="/test-series">
+        Test Series
+      </Link>
+      <Link className="hover:text-blue-600" to="/mentors">
+        Mentors
+      </Link>
+    </>
+  )}
+
+  {user?.role === "admin" && (
+    <Link
+      to="/admin"
+      className="text-red-600 font-semibold hover:text-red-700"
+    >
+      Admin Panel
+    </Link>
+  )}
+
+  {/* ===== USER / AUTH ===== */}
+  {user ? (
+    <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2 text-blue-600">
+        <User size={18} />
+        <span>{user.name}</span>
+      </div>
+
+      <button
+        onClick={logout}
+        className="text-red-600 hover:text-red-700 font-semibold"
+      >
+        Logout
+      </button>
+    </div>
+  ) : (
+    <Link
+      to="/login"
+      className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+    >
+      Login
+    </Link>
+  )}
+</div>
+
 
         {/* ===== Mobile Menu Button ===== */}
         <button
@@ -113,7 +135,28 @@ const Navbar = () => {
                 </button>
               </div>
 
-             {user ? (
+           {user?.role !== "admin" && (
+  <>
+    <Link onClick={() => setOpen(false)} to="/test-series">
+      Test Series
+    </Link>
+    <Link onClick={() => setOpen(false)} to="/mentors">
+      Mentors
+    </Link>
+  </>
+)}
+
+{user?.role === "admin" && (
+  <Link
+    to="/admin"
+    onClick={() => setOpen(false)}
+    className="text-red-600 font-semibold"
+  >
+    Admin Panel
+  </Link>
+)}
+
+{user ? (
   <>
     <span className="text-blue-600">
       Hello, {user.name}

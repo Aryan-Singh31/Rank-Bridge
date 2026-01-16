@@ -1,54 +1,27 @@
-require("dotenv").config();
+import dotenv from "dotenv";
+import express from "express";
+import cors from "cors";
+import connectDB from "./config/db.js";
+import authRoutes from "./routes/authRoutes.js";
+import examRoutes from "./routes/examRoutes.js";
+import testRoutes from "./routes/testRoutes.js";
 
-const express = require("express");
-const path = require("path");
-const session = require("express-session");
 
-const connectDB = require("./config/db");
-
-// Routes
-const authRoutes = require("./routes/auth.routes");
-const pageRoutes = require("./routes/page.routes");
+dotenv.config();
 
 const app = express();
-
-/* =====================
-   DATABASE
-===================== */
 connectDB();
 
-/* =====================
-   MIDDLEWARES
-===================== */
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use(
-  session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: false }, // prod me true
-  })
-);
+app.use("/api/auth", authRoutes);
+app.use("/api/exams", examRoutes);
+app.use("/api/tests", testRoutes);
 
-/* =====================
-   VIEW ENGINE & STATIC
-===================== */
-app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "../frontend/views"));
-app.use(express.static(path.join(__dirname, "../frontend/public")));
 
-/* =====================
-   ROUTES
-===================== */
-app.use("/", pageRoutes);
-app.use("/", authRoutes);
-
-/* =====================
-   SERVER
-===================== */
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
+  console.log(`🚀 API Server running on port ${PORT}`);
 });

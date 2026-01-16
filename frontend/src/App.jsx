@@ -3,6 +3,11 @@ import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import VerifyEmail from "./pages/verifyEmail";
+import Navbar from "./components/Navbar";
+import { useAuth } from "./context/AuthProvider";
+import { Navigate } from "react-router-dom";
+
 
 // ===== Course Pages =====
 import NimcetCard from "./pages/NimcetCard";
@@ -30,115 +35,105 @@ import NeetPYQs from "./pages/NeetPYQs";
 import GatePYQs from "./pages/GatePYQs";
 import UpscPYQs from "./pages/UpscPYQs";
 
-/* ===== TEST SERIES ===== */
 import TestHome from "./pages/TestHome";
-import UpscTestPage from "./pages/UpscTestPage";
-import NimcetTestPage from "./pages/NimcetTestPage";
- import JeeTestPage from "./pages/JeeTestPage";
- import NeetTestPage from "./pages/NeetTestPage";
-import GateTestPage from "./pages/GateTestPage";
-import CuetTestPage from "./pages/CuetTestPage";
+import ExamTestPage from "./pages/ExamTestPage";
+import Result from "./pages/Result";
+import TestPlayer from "./pages/TestPlayer";
 
-/* =====GENERAL INSTRUCTIONS FOR TEST SERIES ===== */
-import CuetGeneralInstruction from "./pages/CuetGeneralInstruction";
-import GateGeneralInstruction from "./pages/GateGeneralInstruction";
-import UpscGeneralInstruction from "./pages/UpscGeneralInstruction";
-import NeetGeneralInstruction from "./pages/NeetGeneralInstruction";
-import NimcetGeneralInstruction from "./pages/NimcetGeneralInstruction";
-import JeeGeneralInstruction from "./pages/JeeGeneralInstruction";
+// ===== ADMIN PAGES =====
+import AdminLayout from "./pages/admin/AdminLayout";
+import AdminDashboard from "./pages/admin/AdminDashboard";
+import AddExam from "./pages/admin/AddExam";
+import AddTest from "./pages/admin/AddTest";
+import AddQuestion from "./pages/admin/AddQuestion";
+
+
+// general instruction 
+import GeneralInstruction from "./pages/GeneralInstruction";
+import Mentor from "./pages/Mentor";
+
+import Register from "./pages/Register";
 
 
 function App() {
+  const { user, loading } = useAuth();
+
+  if (loading) return null;
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/aboutus" element={<AboutUs />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
+    <>
+      <Navbar />
 
-      {/* ===== Courses ===== */}
-      <Route path="/nimcetcard" element={<NimcetCard />} />
-      <Route path="/jeecard" element={<Jeecard />} />
-      <Route path="/neetcard" element={<NeetCard />} />
-      <Route path="/gatecard" element={<GateCard />} />
-      <Route path="/cuetcard" element={<CuetCard />} />
-      <Route path="/upsccard" element={<UpscCard />} />
+      <Routes>
+        {/* ===== BASIC ROUTES ===== */}
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
 
-      {/* ===== Notes ===== */}
-      <Route path="/notes" element={<NotesHome />} />
-      <Route path="/notes/cuet" element={<CuetNotes />} />
-      <Route path="/notes/jee" element={<JeeNotes />} />
-      <Route path="/notes/neet" element={<NeetNotes />} />
-      <Route path="/notes/gate" element={<GateNotes />} />
-      <Route path="/notes/nimcet" element={<NimcetNotes />} />
-      <Route path="/notes/upsc" element={<UpscNotes />} />
+        {/* ===== Courses ===== */}
+        <Route path="/nimcetcard" element={<NimcetCard />} />
+        <Route path="/jeecard" element={<Jeecard />} />
+        <Route path="/neetcard" element={<NeetCard />} />
+        <Route path="/gatecard" element={<GateCard />} />
+        <Route path="/cuetcard" element={<CuetCard />} />
+        <Route path="/upsccard" element={<UpscCard />} />
 
-      {/* ===== PYQs ===== */}
-      <Route path="/pyqs" element={<PYQsHome />} />
-      <Route path="/pyqs/cuet" element={<CuetPYQs />} />
-      <Route path="/pyqs/nimcet" element={<NimcetPYQs />} />
-      <Route path="/pyqs/jee" element={<JeePYQs />} />
-      <Route path="/pyqs/neet" element={<NeetPYQs />} />
-      <Route path="/pyqs/gate" element={<GatePYQs />} />
-      <Route path="/pyqs/upsc" element={<UpscPYQs />} />
+        {/* ===== Notes ===== */}
+        <Route path="/notes" element={<NotesHome />} />
+        <Route path="/notes/cuet" element={<CuetNotes />} />
+        <Route path="/notes/jee" element={<JeeNotes />} />
+        <Route path="/notes/neet" element={<NeetNotes />} />
+        <Route path="/notes/gate" element={<GateNotes />} />
+        <Route path="/notes/nimcet" element={<NimcetNotes />} />
+        <Route path="/notes/upsc" element={<UpscNotes />} />
 
-       {/* ===== TEST SERIES ===== */}
-      <Route path="/test-series" element={<TestHome />} />
-      <Route path="/test-series/upsc" element={<UpscTestPage />} />
-      <Route path="/test-series/nimcet" element={<NimcetTestPage />} />
-      <Route path="/test-series/jee" element={<JeeTestPage />} />
-      <Route path="/test-series/cuet" element={<CuetTestPage />} />
-      <Route path="/test-series/gate" element={<GateTestPage />} />
-      <Route path="/test-series/neet" element={<NeetTestPage />} />
+        {/* ===== PYQs ===== */}
+        <Route path="/pyqs" element={<PYQsHome />} />
+        <Route path="/pyqs/cuet" element={<CuetPYQs />} />
+        <Route path="/pyqs/nimcet" element={<NimcetPYQs />} />
+        <Route path="/pyqs/jee" element={<JeePYQs />} />
+        <Route path="/pyqs/neet" element={<NeetPYQs />} />
+        <Route path="/pyqs/gate" element={<GatePYQs />} />
+        <Route path="/pyqs/upsc" element={<UpscPYQs />} />
 
-         {/* ===== MOCK TEST SERIES ===== */}
-      <Route path="/tests/cuet/instructions" element={<CuetGeneralInstruction />}/>
-       <Route path="/tests/cuet/mock/:id" element={ <div className="p-10 text-center text-xl"> CUET Mock Test Coming Soon</div>}/>
+        {/* ===== TEST SERIES ===== */}
+        <Route path="/test-series" element={<TestHome />} />
+        <Route path="/test-series/:examSlug" element={<ExamTestPage />} />
 
-       <Route path="/tests/gate/instructions" element={<GateGeneralInstruction />} />
-       <Route
-  path="/tests/gate/mock/:id"
-  element={<div className="p-10 text-center text-xl">GATE Mock Test Coming Soon</div>}
-/>
+        <Route
+          path="/tests/:examSlug/instructions/:testId"
+          element={<GeneralInstruction />}
+        />
 
-<Route path="/tests/jee/instructions" element={<JeeGeneralInstruction />} />
-<Route
-  path="/tests/jee/mock/:id"
-  element={<div className="p-10 text-center text-xl">JEE Mock Test Coming Soon</div>}
-/>
+        <Route
+          path="/tests/:examSlug/mock/:testId"
+          element={<TestPlayer />}
+        />
 
-<Route path="/tests/neet/instructions" element={<NeetGeneralInstruction />} />
-<Route
-  path="/tests/neet/mock/:id"
-  element={<div className="p-10 text-center text-xl">NEET Mock Test Coming Soon</div>}
-/>
+        <Route path="/result/:attemptId" element={<Result />} />
 
-
-<Route path="/tests/nimcet/instructions" element={<NimcetGeneralInstruction />} />
-
-<Route
-  path="/tests/nimcet/mock/:id"
+        {/* ===== ADMIN ROUTES ===== */}
+      <Route
+  path="/admin"
   element={
-    <div className="p-10 text-center text-xl">
-      NIMCET Mock Test Coming Soon
-    </div>
+    user?.role === "admin" ? <AdminLayout /> : <Navigate to="/login" />
   }
-/>
+>
+  <Route index element={<AdminDashboard />} />
+  <Route path="exams" element={<AddExam />} />
+  <Route path="tests" element={<AddTest />} />
+  <Route path="questions" element={<AddQuestion />} />
+</Route>
 
 
-<Route path="/tests/upsc/instructions" element={<UpscGeneralInstruction />} />
-
-<Route
-  path="/tests/upsc/mock/:id"
-  element={
-    <div className="p-10 text-center text-xl">
-      UPSC Mock Test Coming Soon
-    </div>
-  }
-/>
-
-    </Routes>
+        {/* ===== AUTH ===== */}
+        <Route path="/register" element={<Register />} />
+        <Route path="/verify-email" element={<VerifyEmail />} />
+      </Routes>
+    </>
   );
 }
+
 
 export default App;

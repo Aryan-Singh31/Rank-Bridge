@@ -24,24 +24,27 @@ const TestPlayer = () => {
   /* =========================================
      STEP 1 — START / RESUME TEST
   ========================================= */
-  // useEffect(() => {
-  //   const startTest = async () => {
-  //     try {
-  //       const res = await axios.post(
-  //         `/api/attempts/start/${testId}`,
-  //         {},
-  //         { headers: { Authorization: `Bearer ${token}` } }
-  //       );
+ useEffect(() => {
+  console.log("🔥 startTest useEffect RUN");
 
-  //       setAttemptId(res.data.attemptId);
-  //       setStartTime(res.data.startTime);
-  //     } catch (err) {
-  //       console.error("START TEST ERROR:", err);
-  //     }
-  //   };
+  const startTest = async () => {
+    try {
+      const res = await axios.post(
+        `/api/attempt/start/${testId}`,
+        {},
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
 
-  //   startTest();
-  // }, [testId, token]);
+      setAttemptId(res.data.attemptId);
+      setStartTime(res.data.startTime);
+    } catch (err) {
+      console.error("START TEST ERROR:", err);
+    }
+  };
+
+  startTest();
+}, [testId, token]);
+
 
   /* =========================================
      STEP 2 — FETCH QUESTIONS
@@ -167,7 +170,7 @@ const TestPlayer = () => {
 
   try {
     await axios.post(
-      `/api/attempts/answer/${attemptId}`,
+      `/api/attempt/answer/${attemptId}`,
       {
         questionId,
         selectedOption: optionIndex,
@@ -194,7 +197,7 @@ const TestPlayer = () => {
 
   try {
     await axios.post(
-      `/api/attempts/answer/${attemptId}`,
+      `/api/attempt/answer/${attemptId}`,
       {
         questionId,
         selectedOption: answersMap[questionId] ?? null,
@@ -229,7 +232,7 @@ const TestPlayer = () => {
   // 🔹 Future: backend-based submit
   try {
     await axios.post(
-      `/api/attempts/submit/${attemptId}`,
+      `/api/attempt/submit/${attemptId}`,
       {},
       { headers: { Authorization: `Bearer ${token}` } }
     );

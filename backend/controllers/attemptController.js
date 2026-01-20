@@ -21,8 +21,7 @@ export const startTest = async (req, res) => {
         resume: true,
       });
     }
-
-    const questions = await Question.find({ testId }).select("_id");
+const questions = await Question.find({ test: testId }).select("_id");
 
     const answers = questions.map((q) => ({
       questionId: q._id,
@@ -47,9 +46,6 @@ export const startTest = async (req, res) => {
     });
   }
 };
-
-import Attempt from "../models/attemptModel.js";
-import Test from "../models/testModel.js";
 
 export const saveAnswer = async (req, res) => {
   try {
@@ -113,6 +109,7 @@ export const saveAnswer = async (req, res) => {
 
 
 export const submitTest = async (req, res) => {
+  console.log("🔥 submitTest API HIT");
   try {
     const { attemptId } = req.params;
 
@@ -137,24 +134,25 @@ export const submitTest = async (req, res) => {
     let wrong = 0;
     let skipped = 0;
 
-    attempt.answers.forEach((ans) => {
-      // skipped
-      if (ans.selectedOption === null) {
-        skipped++;
-        return;
-      }
+const marks = Number(test.marksPerQuestion) || 0;
+const negative = Number(test.negativeMarking) || 0;
 
-      // correct
-      if (ans.selectedOption === ans.questionId.correctOption) {
-        score += ans.questionId.marks;
-        correct++;
-      }
-      // wrong
-      else {
-        score -= test.negativeMarking;
-        wrong++;
-      }
-    });
+attempt.answers.forEach((ans) => {
+
+  if (ans.selectedOption === null || ans.selectedOption === undefined) {
+    skipped++;
+    return;
+  }
+
+  if (Number(ans.selectedOption) === Number(ans.questionId.correctOption)) {
+    score += marks;
+    correct++;
+  } else {
+    score -= negative;
+    wrong++;
+  }
+});
+
 
     attempt.score = score;
     attempt.correct = correct;

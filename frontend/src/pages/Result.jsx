@@ -48,7 +48,7 @@ const Result = () => {
     if (attemptId === "demo") return;
 
     axios
-      .get(`/api/attempts/result/${attemptId}`, {
+      .get(`/api/attempt/result/${attemptId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
